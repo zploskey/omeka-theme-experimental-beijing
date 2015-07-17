@@ -1,39 +1,19 @@
-<?php
-head();
-?>
+<?php echo head(array('bodyid' => 'home', 'bodyclass' => 'two-col')); ?>
 
-
-<?php
-echo head(array(
-    'bodyid' => 'home',
-    'bodyclass' => 'two-col'
-));
-?>
 <div id="primary">
-    <?php
-if ($homepageText = get_theme_option('Homepage Text')):
-?>
-    <p><?php
-    echo $homepageText;
-?></p>
-    <?php
-endif;
-?>
+    <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
+        <p><?php echo $homepageText; ?></p>
+    <?php endif; ?>
 
-
-    <?php
-if ((get_theme_option('Display Featured Exhibit')) && function_exists('exhibit_builder_display_random_featured_exhibit')):
+<?php
+if ((get_theme_option('Display Featured Exhibit'))
+    && function_exists('exhibit_builder_display_random_featured_exhibit')):
 ?>
     <!-- Featured Exhibit -->
-    <?php
-    echo exhibit_builder_display_random_featured_exhibit();
-
-?>
-    <?php
-endif;
-?>
-
+    <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
+<?php endif; ?>
 </div>
+
 <!-- Featured Collection -->
 <div class="row">
 <div class="large-12 columns">
@@ -50,9 +30,9 @@ if (get_theme_option('Display Featured Collection')):
 ?>
 
 	</div>
-	
+
 	</div>
-	
+
 
 	</div>
 
@@ -88,7 +68,7 @@ endif;
 
 <!-- Recent Items -->
 <div id="recent-items" class="small-12 large-6 columns">
-	<!-- Recent Items -->		
+	<!-- Recent Items -->
   <div id="recent-items">
       <h2><?php
 echo __('Recently Added Items');
@@ -119,7 +99,7 @@ if (has_loop_records('items')):
 ?></p>
           <?php
         endif;
-?>						
+?>
       </li>
       <?php
     endforeach;
@@ -143,7 +123,7 @@ echo link_to_items_browse(__('View All Items'));
 
 	</div>
 	<!-- Featured Exhibit -->
-	
+
 	<div class="row">
 
 
