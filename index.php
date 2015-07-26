@@ -2,51 +2,35 @@
 
 <div id="primary">
     <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
-        <p><?php echo $homepageText; ?></p>
+    <p><?php echo $homepageText; ?></p>
     <?php endif; ?>
-</div>
 
+<?php if (get_theme_option('Display Featured Collection')): ?>
 <!-- Featured Collection -->
 <div class="row">
 <div class="large-12 columns">
 <div id="featured" class="panel">
-
-<?php if (get_theme_option('Display Featured Collection')): ?>
-
-    <div id="featured-collection">
+<div id="featured-collection">
     <?php echo random_featured_collection(); ?>
-    </div>
 </div>
 </div>
-
+</div>
+</div>
+<!-- End Featured Collection -->
 <?php endif; ?>
-<!-- end featured collection -->
 
+
+<?php if (get_theme_option('Display Featured Item') == 1): ?>
 <!-- Featured Item -->
-
-<?php
-if (get_theme_option('Display Featured Item') == 1):
-?>
-
-</div>
-
 <div class="row">
-  <div id="featured-items" class="small-12 large-6 columns">
-		      <h2><?php
-		echo __('Featured Item');
-		?></h2>
-
-	<?php
-    echo random_featured_items(1);
-?>
+<div id="featured-items" class="small-12 large-6 columns">
+    <h2><?php echo __('Featured Item'); ?></h2>
+    <?php echo random_featured_items(1); ?>
 </div>
-
-
-<?php
-endif;
-?>
 <!--end featured-item-->
+<?php endif; ?>
 
+<?php if (get_theme_option('Display Recent Items')): ?>
 <!-- Recent Items -->
 <div id="recent-items" class="small-12 large-6 columns">
 	<!-- Recent Items -->
@@ -100,32 +84,19 @@ echo link_to_items_browse(__('View All Items'));
 ?></p>
 </div>
 </div>
-<!-- end recent-items -->
+<!-- end Recent Items -->
+<?php endif; ?>
 
-	</div>
-	<!-- Featured Exhibit -->
-
-	<div class="row">
-
-
-    <?php
-if ((get_theme_option('Display Featured Exhibit')) && function_exists('exhibit_builder_random_featured_exhibit')):
-?>
+<?php if ((get_theme_option('Display Featured Exhibit'))
+       && function_exists('exhibit_builder_random_featured_exhibit')): ?>
+<!-- Featured Exhibit -->
+<div class="row">
+<?php echo exhibit_builder_display_random_featured_exhibit(); ?>
 </div>
-
-
- <?php
-    echo exhibit_builder_display_random_featured_exhibit();
-?>
-  <?php
-endif;
-?>
-
+<?php endif; ?>
 
 </div><!-- end primary -->
 
-
 <footer>
-<?php
-echo foot();
-?></footer>
+<?php echo foot(); ?>
+</footer>
