@@ -4,42 +4,23 @@
     <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
         <p><?php echo $homepageText; ?></p>
     <?php endif; ?>
-
-<?php
-if ((get_theme_option('Display Featured Exhibit'))
-    && function_exists('exhibit_builder_display_random_featured_exhibit')):
-?>
-    <!-- Featured Exhibit -->
-    <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-<?php endif; ?>
 </div>
 
 <!-- Featured Collection -->
 <div class="row">
 <div class="large-12 columns">
+<div id="featured" class="panel">
 
-			<div id="featured" class="panel">
+<?php if (get_theme_option('Display Featured Collection')): ?>
 
-	<?php
-if (get_theme_option('Display Featured Collection')):
-?>
+    <div id="featured-collection">
+    <?php echo random_featured_collection(); ?>
+    </div>
+</div>
+</div>
 
-	<div id="featured-collection" >
-<?php
-    echo random_featured_collection();
-?>
-
-	</div>
-
-	</div>
-
-
-	</div>
-
-<?php
-endif;
-?>
-	<!-- end featured collection -->
+<?php endif; ?>
+<!-- end featured collection -->
 
 <!-- Featured Item -->
 
@@ -134,7 +115,7 @@ if ((get_theme_option('Display Featured Exhibit')) && function_exists('exhibit_b
 
 
  <?php
-    echo exhibit_builder_display_featured_exhibit();
+    echo exhibit_builder_display_random_featured_exhibit();
 ?>
   <?php
 endif;
