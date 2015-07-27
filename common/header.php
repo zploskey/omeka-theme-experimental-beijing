@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo get_html_lang(); ?>">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <?php if ($description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>"/>
     <?php endif;?>
@@ -64,44 +64,44 @@ fire_plugin_hook('public_body', array(
 ?>
 
 <header>
-		  <?php
+          <?php
 fire_plugin_hook('public_header');
 ?>
-		</header>
+        </header>
 
-		        <div id="primary-nav" class="contain-to-grid sticky">
-		<nav class="top-bar">
-		 <ul class="title-area">
-		    <!-- Title Area -->
-		    <li class="name">
-		       <h1 id="site-title"><a href="#"><?php
+                <div id="primary-nav" class="contain-to-grid sticky">
+        <nav class="top-bar">
+         <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+               <h1 id="site-title"><a href="#"><?php
 echo link_to_home_page(theme_logo());
 ?></a></h1>
-		    </li>
-		    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		  </ul>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
 
-				<section class="top-bar-section">
-								        <!-- Left Nav Section -->
-									<ul class="left">
+                <section class="top-bar-section">
+                                        <!-- Left Nav Section -->
+                                    <ul class="left">
 
-				        <?php
+                        <?php
 echo public_nav_main();
 ?>
 
 
 
-										</ul>
+                                        </ul>
 
 
-			<ul class="right">
-				<li class="divider hide-for-small"></li>
-				<li><?php
+            <ul class="right">
+                <li class="divider hide-for-small"></li>
+                <li><?php
 echo link_to_item_search('More Search Options');
 ?></li>
 
-		  <li><?php
+          <li><?php
 echo search_form(array(
     'show_advanced' => false
 ));
@@ -109,16 +109,16 @@ echo search_form(array(
 
 </ul>
  </section>
-		    </nav>
+            </nav>
 
 
 
-		  </div>
+          </div>
 
-	<div class="row">
+    <div class="row">
 
-		<div class="large-12 columns">
+        <div class="large-12 columns">
 
-	      <h1 id="site-title"><?php
+          <h1 id="site-title"><?php
 echo link_to_home_page(theme_logo());
 ?></h1>

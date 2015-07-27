@@ -33,7 +33,7 @@
 <?php if (get_theme_option('Display Recent Items')): ?>
 <!-- Recent Items -->
 <div id="recent-items" class="small-12 large-6 columns">
-	<!-- Recent Items -->
+    <!-- Recent Items -->
   <div id="recent-items">
       <h2><?php
 echo __('Recently Added Items');
