@@ -1,7 +1,7 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
 <?php if ($homepageText = get_theme_option('Homepage Text')) : ?>
-<p><?php echo $homepageText; ?></p>
+<p class="intro"><?php echo $homepageText; ?></p>
 <?php endif; ?>
 
 <div id="featured">
@@ -13,16 +13,16 @@
     </div>
      <!--end featured-item-->
     <?php endif; ?>
-    
+
     <?php if (get_theme_option('Display Featured Collection')) : ?>
-        <!-- Featured Collection -->
+    <!-- Featured Collection -->
     <div id="featured-collection">
         <h2><?php echo __('Featured Collection'); ?></h2>
         <?php echo random_featured_collection(); ?>
     </div>
      <!-- End Featured Collection -->
     <?php endif; ?>
-    
+
 <?php
 if ((get_theme_option('Display Featured Exhibit'))
     && plugin_is_active('ExhibitBuilder')
@@ -37,13 +37,15 @@ if ((get_theme_option('Display Featured Exhibit'))
 
 <?php
 
-if (get_theme_option('Display Recent Items')) :
+if (get_theme_option('Display Recent Items')) {
     $recentItems = get_theme_option('Homepage Recent Items');
     if ($recentItems === null || $recentItems === '') {
         $recentItems = 3;
     } else {
         $recentItems = (int) $recentItems;
     }
+}
+if ($recentItems) :
 ?>
 <!-- Recent Items -->
 <div id="recent-items">
@@ -52,8 +54,7 @@ if (get_theme_option('Display Recent Items')) :
     <p class="view-items-link">
         <?php echo link_to_items_browse(__('View All Items')); ?>
     </p>
-</div>
- <!-- end Recent Items -->
+</div><!--end recent-items -->
 <?php endif; ?>
 
 <?php fire_plugin_hook('public_home', array('view' => $this)); ?>

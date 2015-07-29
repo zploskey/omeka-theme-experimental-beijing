@@ -7,12 +7,13 @@
     <meta name="description" content="<?php echo $description; ?>"/>
     <?php endif;?>
 
-    <title>
     <?php
-    echo option('site_title');
-    echo isset($title) ? ' | ' . strip_formatting($title) : '';
+    if (isset($title)) {
+        $titleParts[] = strip_formatting($title);
+    }
+    $titleParts[] = option('site_title');
     ?>
-    </title>
+    <title><?php echo implode(' &middot; ', $titleParts); ?></title>
 
     <?php echo auto_discovery_link_tags(); ?>
 
@@ -21,30 +22,26 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-    queue_css_file('foundation');
-    queue_css_file('app');
+    queue_css_url('//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+    queue_css_file(array('iconfonts','style'));
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
-    <?php
-    queue_js_file('app');
-    queue_js_file('foundation/foundation');
-    queue_js_file('foundation/foundation.orbit');
-    queue_js_file('vendor/jquery');
-    queue_js_file('vendor/custom.modernizr');
-    queue_js_file('foundation/foundation.forms');
-    echo head_js();
+    <?php 
+    queue_js_file(array('jquery-accessibleMegaMenu', 'minimalist', 'globals'));
+    echo head_js(); 
     ?>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
+<<<<<<< HEAD
     <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
     <div id="wrap">
         <header role="banner">
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
+            <?php echo theme_header_image(); ?>
             <div id="site-title">
                 <?php echo link_to_home_page(theme_logo()); ?>
             </div>
