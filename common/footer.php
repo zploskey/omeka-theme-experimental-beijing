@@ -1,34 +1,30 @@
-</div>
-</div>
-    <div id="footer">
-    
-        
-            <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
-        <p><?php echo $footerText; ?></p>
-        <?php endif; ?>
-    <?php fire_plugin_hook('public_footer'); ?>
-        <ul class="pagination">
-    
-        </ul>
-        <div class="row">
-            <div class="footer-menu large-4 columns">
-            
-            <h4>About</h4>
-        <ul class="link-list">
-            <li><a href="http://omeka.org" id="omeka-logo" name="omeka-logo">Powered by Omeka</a></li> <li> <a href="http://omeka.org/codex/">Documentation</a></li> <li> <a href="http://omeka.org/forums/">Support Forums</a></li>
-        </ul>
-        </div>
-        <div class="footer-menu large-4 columns">
-            <h4>Menu</h4>
-            <ul class="link-list"
-            <?php
-echo public_nav_main();
-?></ul>
+        </article>
+
+        <footer role="contentinfo">
+
+            <nav id="bottom-nav">
+                <?php echo public_nav_main(); ?>
+            </nav>
+
+            <div id="footer">
+                <?php echo get_theme_option('Footer Text'); ?>
+                <?php if ((get_theme_option('Display Footer Copyright') == 1)
+                        && $copyright = option('copyright')) : ?>
+                <p><?php echo $copyright; ?></p>
+                <?php endif; ?>
             </div>
-            
-            <div class="footer-menu large-4 columns">
-        <h4>Credits </h4>
-                </div>
-    </div>
-</div>
-</div>
+
+            <?php fire_plugin_hook('public_footer'); ?>
+
+        </footer>
+
+    </div><!-- end wrap -->
+    <script>
+    jQuery(document).ready(function() {
+        Omeka.showAdvancedForm();
+        Omeka.skipNav();
+        Omeka.megaMenu('#top-nav');
+    });
+    </script>
+</body>
+</html>
