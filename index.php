@@ -36,7 +36,6 @@ if ((get_theme_option('Display Featured Exhibit'))
 </div><!-- End Featured/Primary Column -->
 
 <?php
-
 if (get_theme_option('Display Recent Items')) {
     $recentItems = get_theme_option('Homepage Recent Items');
     if ($recentItems === null || $recentItems === '') {
@@ -45,8 +44,7 @@ if (get_theme_option('Display Recent Items')) {
         $recentItems = (int) $recentItems;
     }
 }
-if ($recentItems) :
-?>
+if (isset($recentItems)) : ?>
 <!-- Recent Items -->
 <div id="recent-items">
     <h2><?php echo __('Recently Added Items'); ?></h2>
