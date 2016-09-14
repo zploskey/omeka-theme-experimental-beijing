@@ -5,7 +5,25 @@
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
 <?php endif; ?>
-
+<?php
+$placard_entries = array(
+    array('Dublin Core', 'Creator'),
+    array('Dublin Core', 'Date'),
+    array('Item Type Metadata', 'Original Format'),
+    array('Item Type Metadata', 'Physical Dimensions'),
+);
+$placard_texts = array();
+foreach($placard_entries as $e) {
+    $text = metadata('item', $e);
+    if ($text) {
+        array_push($placard_texts, $text);
+    }
+}
+$placard = implode(', ', $placard_texts);
+?>
+<div id="placard">
+<?php echo $placard; ?>
+</div>
 <?php echo all_element_texts('item'); ?>
 
 <!-- The following returns all of the files associated with an item. -->
