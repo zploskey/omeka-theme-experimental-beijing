@@ -5,6 +5,8 @@
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
 <?php endif; ?>
+
+<?php echo metadata('item', array('Item Type Metadata', 'Embed')); ?>
 <?php
 $placard_entries = array(
     array('Dublin Core', 'Creator'),
