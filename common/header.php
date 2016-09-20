@@ -54,6 +54,14 @@
                 <?php endif; ?>
             </div>
 
+            <div id="language-selection">
+                <form id="language-selector" name="language-selector"
+                        method="post">
+                    <input type="submit" name="lang" value="zh_CN">
+                    <input type="submit" name="lang" value="en_US">
+                </form>
+            </div>
+
             <nav id="top-nav" role="navigation">
                 <?php echo public_nav_main(); ?>
             </nav>
