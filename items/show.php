@@ -9,19 +9,36 @@
 <?php echo metadata('item', array('Item Type Metadata', 'Embed')); ?>
 <?php
 $placard_entries = array(
+    array('Dublin Core', 'Title'),
     array('Dublin Core', 'Creator'),
-    array('Dublin Core', 'Date'),
+    array('Item Type Metadata', 'Date Created'),
     array('Item Type Metadata', 'Original Format'),
-    array('Item Type Metadata', 'Physical Dimensions'),
+    array('Item Type Metadata', 'Original Material'),
+    array('Item Type Metadata', 'Original Measurements'),
 );
-$placard_texts = array();
+
+$placard = '';
 foreach($placard_entries as $e) {
-    $text = metadata('item', $e);
-    if ($text) {
-        array_push($placard_texts, $text);
+    $text = '';
+    try {
+        $text = metadata('item', $e, array('all' => true, 'delimiter' => ', '));
+    } catch (Omeka_Record_Exception $e) {
+        continue;
+    }
+    if (! ($text === '')) {
+        if ($e[1] === 'Original Material') {
+            $text = '(' . $text . ')';
+        }
+
+        if ($e[1] === 'Original Format') {
+            $placard .= $text . ' ';
+        } elseif ($e[1] === 'Original Measurements') {
+            $placard .= $text;
+        } else {
+            $placard .= $text . ', ';
+        }
     }
 }
-$placard = implode(', ', $placard_texts);
 ?>
 <div id="placard">
 <?php echo $placard; ?>
