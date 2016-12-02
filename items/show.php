@@ -4,10 +4,14 @@
 
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
-<?php endif; ?>
+<?php endif;
 
-<?php echo metadata('item', array('Item Type Metadata', 'Embed')); ?>
-<?php
+try {
+    echo metadata('item', array('Item Type Metadata', 'Embed'));
+} catch (Omeka_Record_Exception $e) {
+    // simply don't display it
+}
+
 $placard_entries = array(
     array('Dublin Core', 'Title'),
     array('Dublin Core', 'Creator'),
@@ -39,6 +43,7 @@ foreach($placard_entries as $e) {
         }
     }
 }
+
 ?>
 <div id="placard">
 <?php echo $placard; ?>
