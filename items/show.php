@@ -15,7 +15,7 @@ try {
 $placard_entries = array(
     array('Dublin Core', 'Title'),
     array('Dublin Core', 'Creator'),
-    array('Item Type Metadata', 'Date Created'),
+    array('Dublin Core', 'Date Created'),
     array('Item Type Metadata', 'Original Format'),
     array('Item Type Metadata', 'Original Material'),
     array('Item Type Metadata', 'Original Measurements'),
