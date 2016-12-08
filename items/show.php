@@ -44,6 +44,7 @@ foreach($placard_entries as $e) {
     }
 }
 
+$placard = trim($placard);
 if (substr($placard, -1) == ',') {
     $placard = substr($placard, 0, -1);
 }
