@@ -692,14 +692,14 @@ footer {
 h1, h2, #item-filters .collection, h3, h4, h5, h6 {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   font-weight: normal;
-  line-height: 36px;
   padding: .5em 0;
   margin: 0;
   color: #555;
 }
 
 h4, h5, h6 {
-  font-style: 19.2px;
+  font-style: 18px;
+  line-height: 27px;
 }
 
 h5, h6 {
@@ -708,17 +708,20 @@ h5, h6 {
 
 h1 {
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 32px;
+  line-height: 48px;
   clear: both;
   word-wrap: break-word;
 }
 
 h2, #item-filters .collection {
-  font-size: 32px;
+  font-size: 24px;
+  line-height: 36px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 h6 {
@@ -1300,24 +1303,10 @@ th {
   margin-bottom: 1.5em;
 }
 
-.item {
-  margin-left: 15px;
-  margin-bottom: 15px;
-}
-.item .item-img {
-  padding-bottom: .5em;
-  height: 7.5em;
-}
-.item .item-img img {
-  height: 100%;
-  width: auto;
-}
-
 .item.hentry {
-  vertical-align: baseline;
   width: 210px;
-  float: left;
-  clear: none;
+  display: inline-block;
+  margin: 5px;
 }
 
 .item-file img {
