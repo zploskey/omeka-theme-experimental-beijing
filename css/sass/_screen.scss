@@ -70,7 +70,7 @@ body {
 .hTagcloud {
     padding:1em 0;
     overflow: hidden;
-    clear:both;
+    clear: both;
 }
 
 #featured-item,
@@ -192,8 +192,6 @@ h1 {
 }
 h2 {
     font-size: $base-font-size * 2;
-    text-transform: capitalize;
-    border-top: 4px solid $grey-light;
 }
 h3 {
     font-size: $base-font-size * 1.5;
@@ -263,11 +261,11 @@ a {
         }
 }
 .browse,
-  .tags,
-  .items {
-      .secondary-nav li, #secondary-nav li{
-          @include line-button;
-      }
+.tags,
+.items {
+  .secondary-nav li, #secondary-nav li{
+      @include line-button;
+  }
 }
 
 .pagination{
@@ -683,15 +681,22 @@ th {
     .item-img{
         padding-bottom:.5em;
         height: rhythm(5);
-        float: right;
 
         img {
             height: 100%;
             width: auto;
-            float: right;
         }
     }
+    margin-left: 15px;
+    margin-bottom: 15px;
 }
+.item.hentry {
+    vertical-align: baseline;
+    width: 210px;
+    float: left;
+    clear: none;
+}
+
 
 .item-file img {
     max-width: 100%;
@@ -759,7 +764,6 @@ body.files .item-file {
 
     .item {
         border-top:1px solid $grey-light;
-
     }
 }
 #item-filters {

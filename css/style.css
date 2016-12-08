@@ -715,8 +715,6 @@ h1 {
 
 h2, #item-filters .collection {
   font-size: 32px;
-  text-transform: capitalize;
-  border-top: 4px solid #ddd;
 }
 
 h3 {
@@ -1302,15 +1300,24 @@ th {
   margin-bottom: 1.5em;
 }
 
+.item {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
 .item .item-img {
   padding-bottom: .5em;
   height: 7.5em;
-  float: right;
 }
 .item .item-img img {
   height: 100%;
   width: auto;
-  float: right;
+}
+
+.item.hentry {
+  vertical-align: baseline;
+  width: 210px;
+  float: left;
+  clear: none;
 }
 
 .item-file img {
