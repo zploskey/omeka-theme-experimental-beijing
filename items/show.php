@@ -44,6 +44,10 @@ foreach($placard_entries as $e) {
     }
 }
 
+if (substr($placard, -1) == ',') {
+    $placard = substr($placard, 0, -1);
+}
+
 ?>
 <div id="placard">
 <?php echo $placard; ?>
