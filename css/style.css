@@ -767,6 +767,13 @@ a:hover {
 
 /* -------------------------------------------------------------------------*/
 /* General Navigation */
+#top-nav .nav-menu .nav-item .lang-select {
+  color: #999999;
+}
+#top-nav .nav-menu .nav-item .lang-select.selected {
+  color: #333333;
+}
+
 .navigation,
 #sort-links {
   list-style: none;
@@ -968,87 +975,129 @@ a:hover {
 
 /* -------------------------------------------------------------------------*/
 /* Top Navigation - Mega Menu Styles */
-#top-nav {
-  min-height: 40px;
-  /*    position:relative;
-  */
+.nav-menu {
+  font-weight: bold;
 }
+
+#top-nav,
+#bottom-nav {
+  float: right;
+}
+
 #top-nav .nav-menu {
-  overflow: auto;
+  width: 100%;
+  display: block;
+  overflow: initial;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 15;
+  background-color: transparent;
+  /* a top level navigation item in the mega menu */
+  /* first descendant link within a top level navigation item */
+  /* focus/open states of first descendant link within a top level
+     navigation item */
+  /* open state of first descendant link within a top level
+     navigation item */
 }
 #top-nav .nav-menu .active a {
   color: #CC0000;
 }
-#top-nav li {
-  display: block;
-  width: 100%;
+#top-nav .nav-menu li {
+  width: auto;
+  border: none;
 }
-#top-nav li .active a {
+#top-nav .nav-menu a {
+  text-decoration: none;
+  padding: .5em;
+}
+#top-nav .nav-menu a:link, #top-nav .nav-menu a:visited {
+  color: #333333;
+}
+#top-nav .nav-menu a:hover, #top-nav .nav-menu a:focus {
   color: #CC0000;
 }
-#top-nav li a {
+#top-nav .nav-menu .nav-item {
+  list-style: none;
   display: block;
-  padding: 1em 0 1em 1em;
-}
-#top-nav li a:hover {
-  color: red;
-  text-decoration: none;
-}
-#top-nav li:last-of-type {
-  border-color: transparent;
-}
-#top-nav li a.open {
-  color: white;
-}
-#top-nav .sub-nav {
-  display: none;
-  background-color: #fff;
-}
-#top-nav .sub-nav.open {
-  display: block;
-  width: 100%;
+  float: left;
+  padding: 0;
+  margin: 5px 5px 0 0;
   position: relative;
+}
+#top-nav .nav-menu .nav-item.active a {
+  color: #CC0000;
+}
+#top-nav .nav-menu .nav-item > a {
+  position: relative;
+  display: inline-block;
+  padding: .5em 1em;
+  margin: 0;
+  border: 0;
+  color: #333333;
+}
+#top-nav .nav-menu .nav-item > a:hover {
+  color: #CC0000;
+}
+#top-nav .nav-menu .nav-item > a:focus {
+  color: #CC0000;
+}
+#top-nav .nav-menu .nav-item > a.open {
+  color: #CC0000;
+  border-bottom: none;
+  z-index: 1;
+}
+#top-nav .nav-menu .sub-nav {
+  position: absolute;
+  display: none;
+  top: 2.5em;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: #fff;
+  z-index: 2;
+  border: 1px solid #6f6f6f;
+}
+#top-nav .nav-menu .sub-nav.open {
+  display: block;
+  min-width: 80px;
+}
+#top-nav .nav-menu .sub-nav.open .active a {
+  color: #CC0000;
+}
+#top-nav .nav-menu .sub-nav.open .active a:hover {
+  color: #CC0000;
+}
+#top-nav .nav-menu .sub-nav.open ul {
+  display: block;
+  vertical-align: top;
   margin: 0;
   padding: 0;
-  top: 0;
 }
-#top-nav .sub-nav.open li {
-  padding: 0;
+#top-nav .nav-menu .sub-nav.open ul a {
+  color: #333333;
 }
-#top-nav .sub-nav.open li a {
-  color: #CC0000;
-  padding: 1em;
-  border-bottom: 1px solid white;
-}
-#top-nav .sub-nav.open li a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-#top-nav .sub-nav.open .active a {
-  color: white;
-}
-#top-nav .sub-nav.open ul a:before {
+#top-nav .nav-menu .sub-nav.open ul a:before {
   content: "\2014\0020";
 }
-#top-nav [aria-haspopup="true"]:after {
-  font-family: "FontAwesome";
-  content: "\f0da";
-  margin: 0 0 0 .5em;
-  vertical-align: bottom;
-}
-#top-nav [aria-haspopup="true"].open:after {
-  content: "\f0d7";
-}
-
-/* -------------------------------------------------------------------------*/
-/* Forms */
-form fieldset {
-  border: 0;
+#top-nav .nav-menu .sub-nav.open li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
   padding: 0;
-  margin: 0 0 1.5em 0;
 }
-form label, form input, form select {
-  margin: 1em .5em 1em 0;
+#top-nav .nav-menu .sub-nav.open li a {
+  color: #333333;
+}
+#top-nav .nav-menu .sub-nav.open li a:hover {
+  color: #CC0000;
+}
+#top-nav .nav-menu .sub-nav.open li a:active {
+  color: #CC0000;
+}
+#top-nav .nav-menu .sub-nav.open li a:focus {
+  color: #CC0000;
 }
 
 select {
@@ -1810,127 +1859,6 @@ body.files .item-file {
   /* mega menu list */
   /*** Adapted from Emiglio by Kim Nguyen ****/
   /* mega menu list */
-  .nav-menu {
-    font-weight: bold;
-  }
-
-  #top-nav .nav-menu {
-    width: 100%;
-    display: block;
-    overflow: initial;
-    position: relative;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    z-index: 15;
-    float: left;
-    background-color: #fff;
-    /* a top level navigation item in the mega menu */
-    /* first descendant link within a top level navigation item */
-    /* focus/open states of first descendant link within a top level
-       navigation item */
-    /* open state of first descendant link within a top level
-       navigation item */
-  }
-  #top-nav .nav-menu .active a {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu li {
-    width: auto;
-    border: none;
-  }
-  #top-nav .nav-menu a {
-    text-decoration: none;
-    padding: .5em;
-  }
-  #top-nav .nav-menu a:link, #top-nav .nav-menu a:visited {
-    color: #333333;
-  }
-  #top-nav .nav-menu a:hover, #top-nav .nav-menu a:focus {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .nav-item {
-    list-style: none;
-    display: block;
-    float: left;
-    padding: 0;
-    margin: 5px 5px 0 0;
-    position: relative;
-  }
-  #top-nav .nav-menu .nav-item.active a {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .nav-item > a {
-    position: relative;
-    display: inline-block;
-    padding: .5em 1em;
-    margin: 0;
-    border: 0;
-    color: #333333;
-  }
-  #top-nav .nav-menu .nav-item > a:hover {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .nav-item > a:focus {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .nav-item > a.open {
-    color: #CC0000;
-    border-bottom: none;
-    z-index: 1;
-  }
-  #top-nav .nav-menu .sub-nav {
-    position: absolute;
-    display: none;
-    top: 2.5em;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    background-color: #fff;
-    z-index: 2;
-    border: 1px solid #6f6f6f;
-  }
-  #top-nav .nav-menu .sub-nav.open {
-    display: block;
-    min-width: 80px;
-  }
-  #top-nav .nav-menu .sub-nav.open .active a {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .sub-nav.open .active a:hover {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .sub-nav.open ul {
-    display: block;
-    vertical-align: top;
-    margin: 0;
-    padding: 0;
-  }
-  #top-nav .nav-menu .sub-nav.open ul a {
-    color: #333333;
-  }
-  #top-nav .nav-menu .sub-nav.open ul a:before {
-    content: "\2014\0020";
-  }
-  #top-nav .nav-menu .sub-nav.open li {
-    display: block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  #top-nav .nav-menu .sub-nav.open li a {
-    color: #333333;
-  }
-  #top-nav .nav-menu .sub-nav.open li a:hover {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .sub-nav.open li a:active {
-    color: #CC0000;
-  }
-  #top-nav .nav-menu .sub-nav.open li a:focus {
-    color: #CC0000;
-  }
-
   #bottom-nav {
     display: block;
     overflow: auto;
