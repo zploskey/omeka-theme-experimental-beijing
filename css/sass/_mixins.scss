@@ -2,16 +2,11 @@
     min-height: 1.5 * $base-line-height;
     padding: rhythm(.25);
     display: block;
-    background-color: lighten($grey-light, 5%);
     margin-bottom:.5em;
     border: 0;
     &:hover {
-        background-color:$accent-main;
-        color:white;
+        color: $accent-light;
         text-decoration: none;
-   }
-   &:active {
-        background-color:$accent-light;
    }
 }
 
@@ -21,7 +16,7 @@
     }
 }
 
-@mixin calc($property, $expression) { 
-  #{$property}: -webkit-calc(#{$expression}); 
-  #{$property}: calc(#{$expression}); 
-} 
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

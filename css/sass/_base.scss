@@ -17,25 +17,26 @@ $show-grid-backgrounds: true;
 // ---------------------------------------------------------------------------
 // Color
 
-$background-color: #fff;
-$text-color: #444;
+$background-color: #fff; // white
+$text-color: #444; // dark
+$active-color: #CC0000; // red
 
-
-$accent-dark: #5C3F8D; // Slightly darker Purple for title and visited links.
-$accent-main: #684B98; // Purple
-$accent-light: #BE75CB; // Pink
-
-$grey-dark: #363636; // tag cloud
+$grey-dark: #333333; // tag cloud
 $grey-medium: #555; //Headers
-$grey-light: #ddd; // Primary accent
+$grey-light: #999999; // Primary accent
+
+$accent-dark: $grey-dark; // Darker color for title and visited links.
+$accent-main: $active-color; // red
+$accent-light: $grey-light;
+
 
 // ---------------------------------------------------------------------------
 // Typography
 
-$font-family-main: 'Lato', Verdana, Arial, sans-serif;
-$base-font-size: 16px;
-$base-line-height: 24px;
-$font-family-title: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+$font-family-main: 'Franklin Gothic', 'Lato', Verdana, Arial, sans-serif;
+$base-font-size: 12px;
+$base-line-height: 20px;
+$font-family-title: "Franklin Gothic", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 
 // ---------------------------------------------------------------------------
 // Mixins
@@ -43,15 +44,11 @@ $font-family-title: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Luc
 @mixin link-button {
     padding: 5px;
     display: block;
-    background-color: lighten($grey-light, 5%);
+    background-color: $accent-light;
     margin-bottom: .5em;
     &:hover {
-        background-color: $accent-main;
-        color: white;
+        color: $accent-light;
         text-decoration: none;
-   }
-   &:active {
-        background-color: $accent-light;
    }
 }
 

@@ -3,7 +3,7 @@
 @import "compass";
 
 /* -------------------------------------------------------------------------*/
-/* Table of Contents 
+/* Table of Contents
 -- Layout
 -- General
 -- Search
@@ -64,10 +64,10 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
     .two label {
         width: 100% !important;
     }
-    label, 
-    .label, 
-    input, 
-    select, 
+    label,
+    .label,
+    input,
+    select,
     button {
        margin: 1em 0;
     }
@@ -79,6 +79,11 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
 /* mega menu list */
 /*** Adapted from Emiglio by Kim Nguyen ****/
 /* mega menu list */
+
+.nav-menu {
+    font-weight: bold;
+}
+
 #top-nav .nav-menu {
     width: 100%;
     display: block;
@@ -89,11 +94,10 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
     padding: 0;
     z-index: 15;
     float: left;
-    background-color: white;    
+    background-color: $background-color;
     .active {
-        background-color: lighten($accent-main, 10%);
         a {
-            color: white;
+            color: $active-color;
         }
     }
     li {
@@ -104,14 +108,14 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
         text-decoration: none;
         padding: .5em;
 
-        &:link, 
+        &:link,
         &:visited {
-            color: $accent-main;
+            color: $accent-dark;
         }
-        
-        &:hover, 
+
+        &:hover,
         &:focus {
-            background-color: $accent-main;
+            color: $active-color;
         }
     }
 /* a top level navigation item in the mega menu */
@@ -121,14 +125,11 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
         float: left;
         padding: 0;
         margin: 5px 5px 0 0;
-        background-color: lighten($grey-light, 5%);
         position: relative;
-
     }
     .nav-item.active {
-        background-color: lighten($accent-main, 10%);
         a {
-            color: white;
+            color: $active-color;
         }
     }
 /* first descendant link within a top level navigation item */
@@ -138,26 +139,24 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
         padding: .5em 1em;
         margin: 0;
         border: 0;
-        color: $accent-main;
+        color: $accent-dark;
         &:hover {
-            color: white;
+            color: $active-color;
         }
         &:focus {
-            color: white;
+            color: $active-color;
         }
     }
-/* focus/open states of first descendant link within a top level 
+/* focus/open states of first descendant link within a top level
    navigation item */
     .nav-item > a:focus,
     .nav-item > a.open {
-        background-color: $accent-main;
     }
 
-/* open state of first descendant link within a top level 
+/* open state of first descendant link within a top level
    navigation item */
     .nav-item > a.open {
-        background-color: $accent-main;
-        color: white;
+        color: $active-color;
         border-bottom: none;
         z-index: 1;
     }
@@ -168,20 +167,18 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
         padding: 0;
         border: 0;
         margin: 0;
-        background-color: $accent-light;
+        background-color: $background-color;
         z-index: 2;
         border: 1px solid lighten($grey-medium, 10%);
     }
     .sub-nav.open {
         display: block;
-        background-color: lighten($grey-light, 10%);
-        min-width: 250px;
+        min-width: 80px;
         .active {
-            background-color: lighten($grey-light, 10%);
             a {
-                color: $accent-main;
+                color: $active-color;
                 &:hover {
-                    color: white;
+                    color: $active-color;
                 }
             }
         }
@@ -191,7 +188,7 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
             margin: 0;
             padding: 0;
             a {
-                color: $accent-main;
+                color: $accent-dark;
                 &:before {
                     content: "\2014\0020";
                 }
@@ -203,14 +200,15 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
             margin: 0;
             padding: 0;
             a {
-                color: $accent-main;
-                &:hover{
-                    background-color: lighten($accent-light, 10%);
-                    color: white;
+                color: $accent-dark;
+                &:hover {
+                    color: $active-color;
+                }
+                &:active {
+                    color: $active-color;
                 }
                 &:focus {
-                    background-color: lighten($accent-light, 10%);
-                    color:white;
+                    color: $active-color;
                 }
             }
         }
@@ -222,11 +220,13 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
     overflow: auto;
     margin-bottom: 1em;
     li {
+        color: $accent-dark;
         padding-right: 20px;
         @include line-button;
         display: block;
         float: left;
         &.active {
+            color: $active-color;
             font-weight: bold;
         }
         ul {
@@ -239,7 +239,7 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
 /* Exhibits */
 
 .exhibits.summary #primary {
-    .exhibit-description, 
+    .exhibit-description,
     .exhibit-credits {
         padding-right: 1em;
     }
@@ -256,7 +256,7 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
         }
     }
     #exhibit-page-navigation {
-        #exhibit-nav-next, 
+        #exhibit-nav-next,
         #exhibit-nav-prev {
             width: 50%;
         }

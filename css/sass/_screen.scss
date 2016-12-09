@@ -54,7 +54,7 @@ footer {@include span-columns(12 omega);}
 }
 
 body {
-    background-color:$background-color;
+    background-color: $background-color;
     font-family: $font-family-main;
     font-size: $base-font-size;
     line-height: $base-line-height;
@@ -204,20 +204,26 @@ h6 {
     font-size:italic;
 }
 #site-title {
-    color:$accent-dark;
+    color: $accent-dark;
     font-family: $font-family-title;
-    text-transform: uppercase;
-    font-size: $base-font-size * 2.5;
+    font-size: $base-font-size * 2;
     font-weight: bold;
-    line-height: $base-line-height * 2;
-    margin: 20px 0;
+    line-height: $base-line-height * 1.5;
+    margin-top: 20px;
     a{text-decoration:none; color:$accent-dark;}
+}
+
+#site-subtitle {
+    color: $accent-light;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-top: 0px;
 }
 
 /* -------------------------------------------------------------------------*/
 /* Links */
 a {
-    @include link-colors($accent-main, saturate($accent-light,5%), $accent-light, lighten($accent-main, 10%), $accent-dark);
+    @include link-colors($active-color, saturate($active-color,5%), $active-color, lighten($active-color, 10%), $active-color);
     text-decoration: none;
     &:hover{text-decoration:underline;}
 }
@@ -261,6 +267,7 @@ a {
             float:left;
             &.active a {
                 font-weight: bold;
+                color: $active-color;
             }
         }
 }
@@ -356,10 +363,6 @@ a {
     }
 }
 
-#bottom-nav {
-   display: none;
-}
-
 /* -------------------------------------------------------------------------*/
 /* Top Navigation - Mega Menu Styles */
 
@@ -367,25 +370,24 @@ a {
     min-height: 40px;
 /*    position:relative;
 */    .nav-menu {
-        overflow: auto;
-        background-color:lighten($grey-light, 5%);
-        .active {
-            background-color: lighten($accent-main, 10%);
-            a{color:white;}
-        }
+            overflow: auto;
+            .active {
+                a {
+                    color: $active-color;
+                }
+            }
     }
     li {
         display: block;
         width: 100%;
         .active a {
-            color:white;
+            color: $active-color;
         }
         a {
             display:block;
             padding: 1em 0 1em 1em;
             &:hover {
-                background-color:$accent-main;
-                @include link-colors(white);
+                @include link-colors(red);
                 text-decoration: none;
             }
         }
@@ -396,12 +398,11 @@ a {
 
         a.open {
             color:white;
-            background-color: $accent-main;
         }
     }
     .sub-nav {
-        display:none;
-        background-color: lighten($grey-light, 10%);
+        display: none;
+        background-color: $background-color;
     }
     .sub-nav.open {
         display: block;
@@ -413,18 +414,17 @@ a {
         li {
             padding:0;
             a {
-                color:$accent-main;
-                padding:1em;
-                border-bottom:1px solid white;
+                color: $accent-main;
+                padding: 1em;
+                border-bottom: 1px solid white;
             }
             a:hover {
-                color:white;
+                color: $background-color;
                 text-decoration: none;
-                background-color:lighten($accent-light, 10%);
             }
         }
         .active a{
-            color:white;
+            color: white;
         }
         ul a:before {
             content: "\2014\0020";
@@ -509,10 +509,11 @@ button,
         position: absolute;
         top: 0;
         text-align: center;
-        color: $accent-main;
+        background-color: $accent-light;
+        color: $accent-dark;
 
         &:hover {
-            color: #fff;
+            color: $active-color;
         }
 
         &:after {
@@ -686,6 +687,7 @@ th {
     display: inline-block;
     margin: 5px;
     vertical-align: top;
+    font-weight: bold;
 }
 
 .item-file img {
@@ -953,7 +955,6 @@ body.files .item-file {
             float:left;
             margin:0;
             .current a {
-                background-color: lighten($accent-main, 5%);
                 color:white;
             }
             li {
