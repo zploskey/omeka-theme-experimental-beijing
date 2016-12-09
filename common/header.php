@@ -43,7 +43,12 @@
             <?php echo theme_header_image(); ?>
             <div id="site-title">
                 <?php echo link_to_home_page(theme_logo()); ?>
+                <br>
+                <div id="site-subtitle">
+                    <?php echo get_theme_option('site_subtitle'); ?>
+                </div>
             </div>
+
 
             <div id="search-container" role="search">
                 <?php if (get_theme_option('use_advanced_search') === null
