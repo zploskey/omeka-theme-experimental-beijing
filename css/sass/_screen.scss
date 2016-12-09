@@ -89,7 +89,7 @@ body {
     }
 
     h2 {
-        @include padding-leader(1, 2 * $base-font-size);
+        @include padding-leader(1, 1.5 * $base-font-size);
     }
 
     .image {
@@ -682,12 +682,13 @@ th {
     @include trailer();
 }
 
-.item.hentry {
-    width: 210px;
-    display: inline-block;
-    margin: 5px;
+.item.hentry, {
+    min-width: 20em; // 240px
+    max-width: 100%;
+    min-height: 18em;
     vertical-align: top;
-    font-weight: bold;
+    display: inline-block;
+    padding: 1em;
 }
 
 .item-file img {

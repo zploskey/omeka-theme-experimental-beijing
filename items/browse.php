@@ -26,6 +26,7 @@ $sortLinks[__('Date Added')] = 'added';
 
 <?php endif; ?>
 
+<div class="items-list">
 <?php foreach (loop('items') as $item): ?>
 <div class="item hentry">
     <div class="item-meta">
@@ -61,6 +62,7 @@ $sortLinks[__('Date Added')] = 'added';
     </div><!-- end class="item-meta" -->
 </div><!-- end class="item hentry" -->
 <?php endforeach; ?>
+</div>
 
 <?php echo pagination_links(); ?>
 
