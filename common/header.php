@@ -60,7 +60,7 @@
             </div>
 
             <nav id="top-nav" role="navigation">
-                <?php echo public_nav_main(); ?>
+                <?php echo filter_nav(public_nav_main(), 'top'); ?>
             </nav>
         </header>
 

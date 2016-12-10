@@ -3,7 +3,7 @@
         <footer role="contentinfo">
 
             <nav id="bottom-nav">
-                <?php echo public_nav_main(); ?>
+                <?php echo filter_nav(public_nav_main(), 'bottom'); ?>
             </nav>
 
             <div id="footer-text">
