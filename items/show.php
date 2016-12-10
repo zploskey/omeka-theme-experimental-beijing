@@ -50,7 +50,7 @@ if (substr($placard, -1) == ',') {
 }
 
 ?>
-<div id="placard">
+<div class="placard">
 <?php echo $placard; ?>
 </div>
 <?php echo all_element_texts('item'); ?>
