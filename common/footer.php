@@ -23,7 +23,7 @@
     jQuery(document).ready(function() {
         Omeka.showAdvancedForm();
         Omeka.skipNav();
-        Omeka.megaMenu('#top-nav');
+        Omeka.megaMenu('#top-nav, #bottom-nav');
     });
     </script>
 </body>
