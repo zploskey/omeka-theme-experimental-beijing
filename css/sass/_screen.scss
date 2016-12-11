@@ -205,9 +205,10 @@ h6 {
     color: $accent-dark;
     font-family: $font-family-title;
     font-size: $base-font-size * 2.3;
-    line-height: $base-line-height * 1.5;
     font-weight: bold;
+    line-height: $base-line-height * 1.5;
     margin-top: 20px;
+    text-transform: uppercase;
     a {
         text-decoration: none;
         color: $accent-dark;
@@ -219,6 +220,7 @@ h6 {
     font-size: $base-font-size * 1.24;
     line-height: $base-line-height * 1.1;
     margin-top: 0px;
+    text-transform: none;
 }
 
 /* -------------------------------------------------------------------------*/
