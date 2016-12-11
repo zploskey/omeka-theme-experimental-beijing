@@ -8,7 +8,7 @@ $bottom_urls = array(
     'sponsors',
     'sponsors-zh_cn',
     'contact',
-    'contact',
+    'contact-zh_cn',
     'faq',
     'faq-zh_cn',
 );
