@@ -1884,30 +1884,6 @@ body.files .item-file {
 
   /* -------------------------------------------------------------------------*/
   /* Navigation */
-  /*------------ Mega Menu Styles -----------*/
-  /* mega menu list */
-  /*** Adapted from Emiglio by Kim Nguyen ****/
-  /* mega menu list */
-  /*
-  #bottom-nav {
-      display: block;
-      overflow: auto;
-      margin-bottom: 1em;
-      li {
-          color: $accent-dark;
-          padding-right: 20px;
-          @include line-button;
-          display: block;
-          float: left;
-          &.active {
-              color: $active-color;
-              font-weight: bold;
-          }
-          ul {
-              display: none;
-          }
-      }
-  }*/
   /* -------------------------------------------------------------------------*/
   /* Exhibits */
   .exhibits.summary #primary .exhibit-description,
