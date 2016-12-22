@@ -31,33 +31,33 @@ $sortLinks[__('Date Added')] = 'added';
 <div class="item hentry">
     <div class="item-meta">
 
-    <?php if (metadata('item', 'has files')): ?>
+    <?php if (metadata($item, 'has files')): ?>
     <div class="item-img">
         <?php echo link_to_item(item_image('square_thumbnail')); ?>
     </div>
     <?php endif; ?>
 
-    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
+    <h2><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
 
-    <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
+    <?php if ($creator = metadata($item, array('Dublin Core', 'Creator'))): ?>
     <div class="item-creator">
-        <?php echo __('by ') . $creator; ?>
+        <?php echo __('by') . ' ' . $creator; ?>
     </div>
     <?php endif; ?>
 
-    <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
+    <?php if ($description = metadata($item, array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
     <div class="item-description">
         <?php echo $description; ?>
     </div>
     <?php endif; ?>
 
-    <?php if (metadata('item', 'has tags')): ?>
+    <?php if (metadata($item, 'has tags')): ?>
     <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
         <?php echo tag_string('items'); ?></p>
     </div>
     <?php endif; ?>
 
-    <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
+    <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
 
     </div><!-- end class="item-meta" -->
 </div><!-- end class="item hentry" -->
