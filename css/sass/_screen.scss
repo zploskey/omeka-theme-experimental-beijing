@@ -417,8 +417,7 @@ a {
         text-decoration: none;
         padding: .5em;
 
-        &:link,
-        &:visited {
+        &:link {
             color: $accent-dark;
         }
 
