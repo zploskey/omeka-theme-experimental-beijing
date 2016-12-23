@@ -161,7 +161,7 @@ $moreInfoElements = array(
         <?php if (isset($elements[$elementName])): ?>
             <?php $texts = $elements[$elementName]; ?>
             <div id="item-<?php echo $elementName; ?>" class="element">
-                <?php $elementName = ($elementName == 'Relation') ? 'Link' : 'Relation';
+                <?php $elementName = ($elementName == 'Relation') ? 'Link' : 'Relation'; ?>
                 <h3><?php echo __($elementName); ?></h3>
                 <?php foreach ($texts as $text): ?>
                     <div class="element-text">
