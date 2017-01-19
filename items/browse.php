@@ -41,7 +41,7 @@ $sortLinks[__('Date Added')] = 'added';
 
     <?php if ($creator = metadata($item, array('Dublin Core', 'Creator'))): ?>
     <div class="item-creator">
-        <?php echo __('by') . ' ' . $creator; ?>
+        <?php echo $creator; ?>
     </div>
     <?php endif; ?>
 
