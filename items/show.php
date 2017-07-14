@@ -69,6 +69,12 @@ if (substr($placard, -1) == ',') {
 
 $descriptionElements = array(
     'Title',
+    'Last Name',
+    'First Name',
+    'Gender',
+    'Culture',
+    'Birth Date',
+    'Death Date',
     'Is Part Of',
     'Creator',
     'Contributor',
@@ -151,7 +157,9 @@ $moreInfoElements = array(
     'Current Location',
     'Creation Location',
     'Publisher',
-    'Relation', // Request: Can we rename this here to “Link”?
+    'Relation',
+    'URI LOC',
+    'URI ULAN',
     'Rights',
 );
 ?>
