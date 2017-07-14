@@ -158,6 +158,8 @@ $moreInfoElements = array(
     'Creation Location',
     'Publisher',
     'Relation',
+    'Style/Period',
+    'Genre',
     'URI LOC',
     'URI ULAN',
     'Rights',
