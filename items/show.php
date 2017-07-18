@@ -1,6 +1,5 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
-<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
@@ -21,52 +20,37 @@ try {
     // simply don't display it
 }
 
+$elementSets = all_element_texts('item', array('return_type' => 'array'));
+
+$elements = array();
+foreach ($elementSets as $elementName => $elementInfo) {
+    $elements = array_merge($elements, $elementInfo);
+}
+
 $placard_entries = array(
-    array('Dublin Core', 'Title'),
-    array('Dublin Core', 'Creator'),
-    array('Dublin Core', 'Date Created'),
-    array('Item Type Metadata', 'Original Format'),
-    array('Item Type Metadata', 'Original Material'),
-    array('Item Type Metadata', 'Original Measurements'),
+    'Title',
+    'Creator',
+    'Date Created',
 );
 
 $placard = '';
-foreach($placard_entries as $e) {
-    $text = '';
-    try {
-        $text = metadata('item', $e, array('all' => true, 'delimiter' => ', '));
-    } catch (Omeka_Record_Exception $e) {
-        continue;
-    }
-    if (! ($text === '')) {
-        switch ($e[1]) {
-            case 'Original Format':
-                $placard .= " $text ";
-                break;
-            case 'Original Measurements':
-                $placard .= $text;
-                break;
-            case 'Original Material':
-                $text = '(' . $text . ') ';
-                // Intentionally fall through.
-            default:
-                $placard .= " $text, ";
-                break;
+foreach ($placard_entries as $e) {
+    if (isset($elements[$e])) {
+        $texts = $elements[$e];
+        foreach ($texts as $t) {
+            if (! ($t === '')) {
+                $placard .= "$t<br/>";
+            }
         }
     }
 }
-
-$placard = trim($placard);
-if (substr($placard, -1) == ',') {
-    $placard = substr($placard, 0, -1);
-}
-
 ?>
-<div class="placard">
-    <?php echo $placard; ?>
-</div>
-<?php
 
+<div class="placard">
+    <h1><?php echo $placard; ?></h1>
+</div>
+
+<?php
 $descriptionElements = array(
     'Title',
     'Last Name',
@@ -92,12 +76,6 @@ $roleMap = array(
 
 $roles = array_keys($roleMap);
 
-$elementSets = all_element_texts('item', array('return_type' => 'array'));
-
-$elements = array();
-foreach ($elementSets as $elementName => $elementInfo) {
-    $elements = array_merge($elements, $elementInfo);
-}
 ?>
 
 <div id="item-description-tab" class="element-set">
