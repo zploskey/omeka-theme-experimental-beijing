@@ -93,7 +93,7 @@ $roles = array_keys($roleMap);
             ?>
             <h3>
                 <?php echo html_escape(__($elementName)) ?>
-                <?php echo $roles ? ' ' . __('(role)') : ''; ?>
+                <?php echo $roles ? ' (' . __('role') . ')' : ''; ?>
             </h3>
             <?php foreach ($texts as $i => $text): ?>
                 <div class="element-text">
