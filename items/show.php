@@ -168,10 +168,6 @@ $moreInfoElements = array(
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
 
-    <div id="item-output-formats" class="element">
-        <h3><?php echo __('Output Formats'); ?></h3>
-        <div class="element-text"><?php echo output_format_list(); ?></div>
-    </div>
     </div><!-- end more-info-section -->
 </div>
 
