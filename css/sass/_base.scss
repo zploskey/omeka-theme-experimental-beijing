@@ -6,34 +6,41 @@
 // ---------------------------------------------------------------------------
 // Basic Grid
 
-$total-columns  : 12;
-$column-width   : 6em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
+$total-columns: 12;
+$column-width: 6em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
 
 $show-grid-backgrounds: true;
-
 
 // ---------------------------------------------------------------------------
 // Color
 
-$background-color: #fff; // white
-$text-color: #444; // dark
-$active-color: #CC0000; // red
+$background-color: #fff;
 
-$grey-dark: #333333; // tag cloud
-$grey-medium: #555; //Headers
-$grey-light: #999999; // Primary accent
+// white
+$text-color: #444;
 
-$accent-dark: $grey-dark; // Darker color for title
-$accent-main: $active-color; // red
+$active-color: #CC0000;
+
+$grey-dark: #333333;
+
+// tag cloud
+$grey-medium: #555;
+
+// Headers
+$grey-light: #999999;
+
+$accent-dark: $grey-dark;
+
+$accent-main: $active-color;
+
 $accent-light: $grey-light;
-
 
 // ---------------------------------------------------------------------------
 // Typography
 
-$font-family-main: 'Roboto', 'Lato', Verdana, Arial, sans-serif;
+$font-family-main: "Roboto", "Lato", Verdana, Arial, sans-serif;
 $base-font-size: 14px;
 $base-line-height: 20px;
 $font-family-title: "Roboto", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
@@ -42,18 +49,19 @@ $font-family-title: "Roboto", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unic
 // Mixins
 
 @mixin link-button {
-    padding: 5px;
-    display: block;
-    background-color: $accent-light;
-    margin-bottom: .5em;
-    &:hover {
-        color: $accent-light;
-        text-decoration: none;
-   }
+  padding: 5px;
+  display: block;
+  background-color: $accent-light;
+  margin-bottom: .5em;
+
+  &:hover {
+    color: $accent-light;
+    text-decoration: none;
+  }
 }
 
 @mixin line-button {
-    &:before {
-        content: "\2014\0020";
-    }
+  &:before {
+    content: "\2014\0020";
+  }
 }
