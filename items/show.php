@@ -1,6 +1,5 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
-
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
 <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
 <?php endif; ?>
@@ -14,11 +13,7 @@
 <?php endif; ?>
 
 <?php
-try {
-    echo metadata('item', array('Item Type Metadata', 'Embed'));
-} catch (Omeka_Record_Exception $e) {
-    // simply don't display it
-}
+echo metadata('item', array('Item Type Metadata', 'Embed'));
 
 $elementSets = all_element_texts('item', array('return_type' => 'array'));
 
@@ -26,28 +21,17 @@ $elements = array();
 foreach ($elementSets as $elementName => $elementInfo) {
     $elements = array_merge($elements, $elementInfo);
 }
-
-$placard_entries = array(
-    'Title',
-    'Creator',
-    'Date Created',
-);
-
-$placard = '';
-foreach ($placard_entries as $e) {
-    if (isset($elements[$e])) {
-        $texts = $elements[$e];
-        foreach ($texts as $t) {
-            if (! ($t === '')) {
-                $placard .= "$t<br/>";
-            }
-        }
-    }
-}
 ?>
 
 <div class="placard">
-    <h1><?php echo $placard; ?></h1>
+    <h1>
+    <?php
+    echo metadata('item', array('Dublin Core', 'Title'),
+                  array('no_escape' => true));
+    ?>
+    </h1>
+    <h2><?php echo metadata('item', array('Dublin Core', 'Creator')); ?></h2>
+    <h2><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h2>
 </div>
 
 <?php
@@ -78,7 +62,13 @@ $roles = array_keys($roleMap);
 
 ?>
 
-<div id="item-description-tab" class="element-set">
+<div class="element-set">
+
+<div id="item-description">
+<a href="#description-section" class="section-toggle">
+    <h1><?php echo __('Description'); ?></h1>
+</a>
+<div id="description-section">
 <?php foreach ($descriptionElements as $elementName): ?>
     <?php $canHaveRoles = isset($roleMap[$elementName]); ?>
     <?php if(isset($elements[$elementName])): ?>
@@ -115,17 +105,25 @@ $roles = array_keys($roleMap);
 </div>
 <?php endif; ?>
 
-</div><!-- end element-set -->
+</div><!-- end description-section -->
+</div><!-- end item-description-tab -->
 
-<div id="item-keywords-tab">
+<?php if (metadata('item', 'has tags')): ?>
+
+<div id="item-keywords">
+    <a href="#keywords-section" class="section-toggle">
+        <h1><?php echo __('Keywords'); ?></h1>
+    </a>
     <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item', 'has tags')): ?>
-    <div id="item-tags" class="element">
-        <h3><?php echo __('Tags'); ?></h3>
-        <div class="element-text"><?php echo tag_string('item'); ?></div>
+    <div id="keywords-section">
+        <div id="item-tags" class="element">
+            <h3><?php echo __('Tags'); ?></h3>
+            <div class="element-text"><?php echo tag_string('item'); ?></div>
+        </div>
     </div>
-    <?php endif;?>
 </div>
+
+<?php endif;?>
 
 <?php
 $moreInfoElements = array(
@@ -145,6 +143,10 @@ $moreInfoElements = array(
 ?>
 
 <div id="item-more-info">
+    <a href="#more-info-section" class="section-toggle">
+        <h1><?php echo __('More Info'); ?></h1>
+    </a>
+    <div id="more-info-section">
     <?php foreach ($moreInfoElements as $elementName): ?>
         <?php if (isset($elements[$elementName])): ?>
             <?php $texts = $elements[$elementName]; ?>
@@ -170,9 +172,12 @@ $moreInfoElements = array(
         <h3><?php echo __('Output Formats'); ?></h3>
         <div class="element-text"><?php echo output_format_list(); ?></div>
     </div>
+    </div><!-- end more-info-section -->
 </div>
 
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+
+</div><!-- end element-set -->
 
 <nav>
 <ul class="item-pagination navigation">
@@ -180,5 +185,22 @@ $moreInfoElements = array(
     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
 </ul>
 </nav>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.section-toggle').click(function() {
+        var collapse_selector = jQuery(this).attr('href');
+        var toggle_switch = jQuery(this);
+
+        jQuery(collapse_selector).toggle(function() {
+            if (jQuery(this).css('display') == 'none') {
+                // TODO: change to minus sign
+            } else {
+                // TODO: change to plus sign
+            }
+        });
+    });
+});
+</script>
 
 <?php echo foot(); ?>
