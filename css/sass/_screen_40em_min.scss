@@ -56,6 +56,13 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
     float: right;
 }
 
+#item-top {
+    #item-top-media {
+        max-width: 500px;
+        margin-right: 50px;
+    }
+}
+
 /* -------------------------------------------------------------------------*/
 /* Search */
 

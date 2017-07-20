@@ -756,9 +756,20 @@ th {
     padding: 1em;
 }
 
-.item-file img {
-    max-width: 100%;
-    height: auto;
+#item-top {
+    width: 100%;
+    div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #item-top-media img, embed {
+        max-width: 100%;
+        max-height: 500px;
+    }
+    .placard {
+        max-width: 500px;
+        word-wrap: break-word;
+    }
 }
 
 .show {

@@ -1361,9 +1361,20 @@ th {
   padding: 1em;
 }
 
-.item-file img {
+#item-top {
+  width: 100%;
+}
+#item-top div {
+  display: inline-block;
+  vertical-align: middle;
+}
+#item-top #item-top-media img, #item-top embed {
   max-width: 100%;
-  height: auto;
+  max-height: 500px;
+}
+#item-top .placard {
+  max-width: 500px;
+  word-wrap: break-word;
 }
 
 .show .element {
@@ -1868,6 +1879,11 @@ body.files .item-file {
   /* General */
   .image {
     float: right;
+  }
+
+  #item-top #item-top-media {
+    max-width: 500px;
+    margin-right: 50px;
   }
 
   /* -------------------------------------------------------------------------*/

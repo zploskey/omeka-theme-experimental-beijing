@@ -1,40 +1,39 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
-<?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-<?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
-<?php endif; ?>
+<div id="item-top">
+    <div id="item-top-media">
+        <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
+        <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+        <?php endif; ?>
 
-<!-- The following returns all of the files associated with an item. -->
-<?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
-<div id="itemfiles" class="element">
-    <h3><?php echo __('Files'); ?></h3>
-    <div class="element-text"><?php echo files_for_item(); ?></div>
+        <!-- The following returns all of the files associated with an item. -->
+        <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
+        <div id="itemfiles" class="element">
+            <h3><?php echo __('Files'); ?></h3>
+            <div class="element-text"><?php echo files_for_item(); ?></div>
+        </div>
+        <?php endif; ?>
+
+        <?php echo metadata('item', array('Item Type Metadata', 'Embed')); ?>
+    </div>
+
+    <div class="placard">
+        <h1>
+        <?php echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true)); ?>
+        </h1>
+        <h2><?php echo metadata('item', array('Dublin Core', 'Creator')); ?></h2>
+        <h2><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h2>
+    </div>
 </div>
-<?php endif; ?>
 
 <?php
-echo metadata('item', array('Item Type Metadata', 'Embed'));
-
 $elementSets = all_element_texts('item', array('return_type' => 'array'));
 
 $elements = array();
 foreach ($elementSets as $elementName => $elementInfo) {
     $elements = array_merge($elements, $elementInfo);
 }
-?>
 
-<div class="placard">
-    <h1>
-    <?php
-    echo metadata('item', array('Dublin Core', 'Title'),
-                  array('no_escape' => true));
-    ?>
-    </h1>
-    <h2><?php echo metadata('item', array('Dublin Core', 'Creator')); ?></h2>
-    <h2><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h2>
-</div>
-
-<?php
 $descriptionElements = array(
     'Title',
     'Last Name',
