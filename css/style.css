@@ -1773,6 +1773,11 @@ body.files .item-file {
 #item-more-info {
   border-top: 1px solid #999999;
 }
+#item-description a,
+#item-keywords a,
+#item-more-info a {
+  text-decoration: none;
+}
 
 #item-more-info {
   border-bottom: 1px solid #999999;
