@@ -1128,10 +1128,6 @@ body.files .item-file {
     min-height: 0;
 }
 
-#more-info-section {
-   display: none;
-}
-
 #keywords-section {
     display: none;
 }
@@ -1160,6 +1156,10 @@ body.files .item-file {
             vertical-align: middle;
         }
     }
+}
+
+#more-info-section {
+   display: none;
 }
 
 #item-description,
