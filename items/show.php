@@ -65,7 +65,10 @@ $roles = array_keys($roleMap);
 
 <div id="item-description">
 <a href="#description-section" class="section-toggle">
-    <h1><?php echo __('Description'); ?></h1>
+    <h1>
+        <?php echo __('Description'); ?>
+        <span id="expand-symbol">-</span>
+    </h1>
 </a>
 <div id="description-section">
 <?php foreach ($descriptionElements as $elementName): ?>
@@ -111,7 +114,10 @@ $roles = array_keys($roleMap);
 
 <div id="item-keywords">
     <a href="#keywords-section" class="section-toggle">
-        <h1><?php echo __('Keywords'); ?></h1>
+        <h1>
+            <?php echo __('Keywords'); ?>
+            <span id="expand-symbol">+</span>
+        </h1>
     </a>
     <!-- The following prints a list of all tags associated with the item -->
     <div id="keywords-section">
@@ -143,7 +149,10 @@ $moreInfoElements = array(
 
 <div id="item-more-info">
     <a href="#more-info-section" class="section-toggle">
-        <h1><?php echo __('More Info'); ?></h1>
+        <h1>
+            <?php echo __('More Info'); ?>
+            <span id="expand-symbol">+</span>
+        </h1>
     </a>
     <div id="more-info-section">
     <?php foreach ($moreInfoElements as $elementName): ?>
@@ -182,9 +191,9 @@ jQuery(document).ready(function() {
 
         jQuery(collapse_selector).toggle(function() {
             if (jQuery(this).css('display') == 'none') {
-                // TODO: change to minus sign
+                jQuery('#expand-symbol', toggle_switch).html('+');
             } else {
-                // TODO: change to plus sign
+                jQuery('#expand-symbol', toggle_switch).html('-');
             }
         });
     });

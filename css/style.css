@@ -1771,6 +1771,10 @@ body.files .item-file {
   display: none;
 }
 
+#expand-symbol {
+  float: right;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Screen - Mobile */
 @media screen and (min-width: 40em) {
