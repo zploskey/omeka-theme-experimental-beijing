@@ -1136,6 +1136,32 @@ body.files .item-file {
     display: none;
 }
 
+#description-section,
+#more-info-section {
+    display: table;
+    margin-bottom: 5em;
+    .element-col-name,
+    .element-col-text {
+        display: table-column;
+    }
+    .element {
+        display: table-row;
+        .element-cell {
+            display: table-cell;
+            vertical-align: top;
+            padding-top: 10px;
+        }
+        .element-cell-name {
+            float: left;
+            white-space: nowrap;
+            margin-right: 40px;
+        }
+        .element-cell-text {
+            vertical-align: middle;
+        }
+    }
+}
+
 #item-description,
 #item-keywords,
 #item-more-info {

@@ -1768,6 +1768,38 @@ body.files .item-file {
   display: none;
 }
 
+#description-section,
+#more-info-section {
+  display: table;
+  margin-bottom: 5em;
+}
+#description-section .element-col-name,
+#description-section .element-col-text,
+#more-info-section .element-col-name,
+#more-info-section .element-col-text {
+  display: table-column;
+}
+#description-section .element,
+#more-info-section .element {
+  display: table-row;
+}
+#description-section .element .element-cell,
+#more-info-section .element .element-cell {
+  display: table-cell;
+  vertical-align: top;
+  padding-top: 10px;
+}
+#description-section .element .element-cell-name,
+#more-info-section .element .element-cell-name {
+  float: left;
+  white-space: nowrap;
+  margin-right: 40px;
+}
+#description-section .element .element-cell-text,
+#more-info-section .element .element-cell-text {
+  vertical-align: middle;
+}
+
 #item-description,
 #item-keywords,
 #item-more-info {

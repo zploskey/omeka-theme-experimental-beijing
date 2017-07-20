@@ -71,6 +71,8 @@ $roles = array_keys($roleMap);
     </h1>
 </a>
 <div id="description-section">
+    <div class="element-col-name"></div>
+    <div class="element-col-text"></div>
 <?php foreach ($descriptionElements as $elementName): ?>
     <?php $canHaveRoles = isset($roleMap[$elementName]); ?>
     <?php if(isset($elements[$elementName])): ?>
@@ -82,19 +84,23 @@ $roles = array_keys($roleMap);
             } else {
                 $roles = array();
             }
-            ?>
-            <h3>
-                <?php echo html_escape(__($elementName)) ?>
-                <?php echo $roles ? ' (' . __('role') . ')' : ''; ?>
-            </h3>
-            <?php foreach ($texts as $i => $text): ?>
-                <div class="element-text">
-                    <?php echo $text; ?>
-                    <?php if (isset($roles[$i])): ?>
-                        (<?php echo $roles[$i]; ?>)
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+?>
+            <div class="element-cell element-cell-name">
+                <h3>
+                    <?php echo html_escape(__($elementName)); ?>
+                    <?php echo $roles ? ' (' . __('role') . '):' : ':'; ?>
+                </h3>
+            </div>
+            <div class="element-cell element-cell-text">
+                <?php foreach ($texts as $i => $text): ?>
+                    <div class="element-text">
+                        <?php echo $text; ?>
+                        <?php if (isset($roles[$i])): ?>
+                            (<?php echo $roles[$i]; ?>)
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div><!-- end element -->
     <?php endif; ?>
 <?php endforeach; ?>
@@ -155,25 +161,37 @@ $moreInfoElements = array(
         </h1>
     </a>
     <div id="more-info-section">
+        <div class="element-col-name"></div>
+        <div class="element-col-text"></div>
     <?php foreach ($moreInfoElements as $elementName): ?>
         <?php if (isset($elements[$elementName])): ?>
             <?php $texts = $elements[$elementName]; ?>
             <div id="item-<?php echo $elementName; ?>" class="element">
                 <?php $elementName = ($elementName == 'Relation') ? 'Link' : $elementName; ?>
-                <h3><?php echo __($elementName); ?></h3>
-                <?php foreach ($texts as $text): ?>
-                    <div class="element-text">
-                        <?php echo $text; ?>
-                    </div>
-                <?php endforeach; ?>
+                <div class="element-cell element-cell-name">
+                    <h3><?php echo __($elementName) . ':'; ?></h3>
+                </div>
+                <div class="element-cell element-cell-text">
+                    <?php foreach ($texts as $text): ?>
+                        <div class="element-text">
+                            <?php echo $text; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         <?php endif; ?>
     <?php endforeach; ?>
 
     <!-- The following prints a citation for this item. -->
     <div id="item-citation" class="element">
-        <h3><?php echo __('Citation'); ?></h3>
-        <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+        <div class="element-cell element-cell-name">
+            <h3><?php echo __('Citation') . ':'; ?></h3>
+        </div>
+        <div class="element-cell element-cell-text">
+            <div class="element-text">
+                <?php echo metadata('item', 'citation', array('no_escape' => true)); ?>
+            </div>
+        </div>
     </div>
 
     </div><!-- end more-info-section -->
