@@ -1376,9 +1376,6 @@ th {
   word-wrap: break-word;
 }
 
-.show .element {
-  border-top: 1px solid #999999;
-}
 .show #output-format-list {
   margin: 0;
   padding: 0;
@@ -1769,6 +1766,16 @@ body.files .item-file {
 
 #keywords-section {
   display: none;
+}
+
+#item-description,
+#item-keywords,
+#item-more-info {
+  border-top: 1px solid #999999;
+}
+
+#item-more-info {
+  border-bottom: 1px solid #999999;
 }
 
 #expand-symbol {

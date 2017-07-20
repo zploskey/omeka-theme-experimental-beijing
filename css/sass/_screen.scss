@@ -772,10 +772,6 @@ th {
 }
 
 .show {
-    .element {
-        border-top:1px solid $grey-light;
-    }
-
     #output-format-list {
         @include horizontal-list;
     }
@@ -1138,6 +1134,16 @@ body.files .item-file {
 
 #keywords-section {
     display: none;
+}
+
+#item-description,
+#item-keywords,
+#item-more-info {
+    border-top: 1px solid $grey-light;
+}
+
+#item-more-info {
+    border-bottom: 1px solid $grey-light;
 }
 
 #expand-symbol {
