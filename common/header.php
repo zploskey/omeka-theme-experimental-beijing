@@ -11,7 +11,7 @@
     if (isset($title)) {
         $titleParts[] = strip_formatting($title);
     }
-    $titleParts[] = option('site_title');
+    $titleParts[] = __(option('site_title'));
     ?>
     <title><?php echo implode(' &middot; ', $titleParts); ?></title>
 
@@ -42,10 +42,16 @@
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
             <?php echo theme_header_image(); ?>
             <div id="site-title">
-                <?php echo link_to_home_page(theme_logo()); ?>
+                <?php
+                if ($logo = theme_logo()) {
+                    echo link_to_home_page($logo);
+                } else {
+                    echo link_to_home_page(__(option('site_title')));
+                }
+                ?>
                 <br>
                 <div id="site-subtitle">
-                    <?php echo get_theme_option('site_subtitle'); ?>
+                    <?php echo __(get_theme_option('site_subtitle')); ?>
                 </div>
             </div>
 
