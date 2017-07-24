@@ -1367,7 +1367,9 @@ th {
   display: inline-block;
   vertical-align: middle;
 }
-#item-top #item-top-media {
+#item-top #item-top-media,
+#item-top img,
+#item-top iframe {
   max-width: 100%;
   max-height: 699px;
 }
