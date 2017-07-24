@@ -49,7 +49,7 @@ $descriptionElements = array(
     'Contributor',
     'Date Created',
     'Original Format',
-    'Original Materials',
+    'Original Material',
     'Original Measurements',
     'Description',
 );
