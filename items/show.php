@@ -21,7 +21,9 @@
         <h1>
         <?php echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true)); ?>
         </h1>
-        <h2><?php echo metadata('item', array('Dublin Core', 'Creator')); ?></h2>
+    <?php foreach(metadata('item', array('Dublin Core', 'Creator'), 'all') as $creator): ?>
+        <h2><?php echo $creator; ?></h2>
+    <?php endforeach; ?>
         <h2><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h2>
     </div>
 </div>
