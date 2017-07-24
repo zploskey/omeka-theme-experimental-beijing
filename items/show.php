@@ -14,7 +14,13 @@
         </div>
         <?php endif; ?>
 
-        <?php echo metadata('item', array('Item Type Metadata', 'Embed')); ?>
+        <?php
+        $embed = metadata('item', array('Item Type Metadata', 'Embed'));
+        $embed = preg_replace('|(<iframe .*)(></iframe>)|',
+                              '\1 allowfullscreen mozallowfullscreen webkitallowfullscreen\2',
+                              $embed, 1);
+        echo $embed;
+        ?>
     </div>
 
     <div class="placard">

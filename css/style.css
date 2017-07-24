@@ -1367,9 +1367,9 @@ th {
   display: inline-block;
   vertical-align: middle;
 }
-#item-top #item-top-media img, #item-top embed {
+#item-top #item-top-media {
   max-width: 100%;
-  max-height: 500px;
+  max-height: 699px;
 }
 #item-top .placard {
   max-width: 500px;
@@ -1929,7 +1929,7 @@ body.files .item-file {
   }
 
   #item-top #item-top-media {
-    max-width: 500px;
+    max-width: 675px;
     margin-right: 50px;
   }
 
