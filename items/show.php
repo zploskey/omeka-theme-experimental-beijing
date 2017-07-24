@@ -96,6 +96,11 @@ $roles = array_keys($roleMap);
             <div class="element-cell element-cell-text">
                 <?php foreach ($texts as $i => $text): ?>
                     <div class="element-text">
+                        <?php
+                        if ($elementName == 'Birth Date' OR $elementName == 'Death Date') {
+                            $text = preg_replace('/(.*)-0-0$/', '\1', $text, 1);
+                        }
+                        ?>
                         <?php echo $text; ?>
                         <?php if (isset($roles[$i])): ?>
                             (<?php echo $roles[$i]; ?>)
