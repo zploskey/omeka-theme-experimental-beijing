@@ -135,7 +135,15 @@ $roles = array_keys($roleMap);
     <!-- The following prints a list of all tags associated with the item -->
     <div id="keywords-section">
         <div id="item-tags" class="element">
-            <div class="element-text"><?php echo tag_string('item'); ?></div>
+            <div class="element-text">
+                <?php
+try {
+    echo locale_filtered_tag_string('item');
+} catch (Exception $e) {
+    echo tag_string('item');
+}
+                ?>
+            </div>
         </div>
     </div>
 </div>
