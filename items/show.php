@@ -150,6 +150,42 @@ try {
 
 <?php endif;?>
 
+<?php if (isset($this->works)): ?>
+
+<div id="item-works">
+<a href="#works-section" class="section-toggle">
+    <h1>
+        <?php echo __('Works'); ?>
+        <span id="expand-symbol">-</span>
+    </h1>
+</a>
+</div>
+<div id="works-section" class="items-list">
+<?php foreach (loop('works') as $work): ?>
+    <div class="item hentry">
+        <div class="item-meta">
+            <?php if (metadata($work, 'has files')): ?>
+            <div class="item-img">
+                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $work)); ?>
+            </div>
+            <?php endif; ?>
+
+            <h2><?php echo link_to_item(
+                metadata($work, array('Dublin Core', 'Title')),
+                array('class'=>'permalink'), 'show', $work); ?></h2>
+
+            <?php if ($date_created = metadata($work, array('Dublin Core', 'Date Created'))): ?>
+            <div class="item-date-created">
+                <?php echo $date_created; ?>
+            </div>
+            <?php endif; ?>
+        </div><!-- end class="item-meta" -->
+    </div><!-- end class="items hentry" -->
+<?php endforeach; ?>
+</div><!-- end id="works-section" class="items-list" -->
+
+<?php endif; ?>
+
 <?php
 $moreInfoElements = array(
     'Cultural Context',
@@ -207,9 +243,7 @@ $moreInfoElements = array(
             </div>
         </div>
     </div>
-
-    </div><!-- end more-info-section -->
-</div>
+</div><!-- end more-info-section -->
 
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
