@@ -9,7 +9,7 @@
 
     <?php
     if (isset($title)) {
-        $titleParts[] = strip_formatting($title);
+        $titleParts[] = __(strip_formatting($title));
     }
     $titleParts[] = __(option('site_title'));
     ?>
