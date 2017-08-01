@@ -30,9 +30,9 @@
     <?php
     $creators = array_unique(metadata('item', array('Dublin Core', 'Creator'), 'all'));
     foreach($creators as $creator): ?>
-        <h2><?php echo $creator; ?></h2>
+        <h3><?php echo $creator; ?></h3>
     <?php endforeach; ?>
-        <h2><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h2>
+        <h3><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h3>
     </div>
 </div>
 
@@ -74,15 +74,12 @@ $roles = array_keys($roleMap);
 <div class="element-set">
 
 <div id="item-description">
-<a href="#description-section" class="section-toggle">
-    <h1>
-        <?php echo __('Description'); ?>
-        <span id="expand-symbol">-</span>
-    </h1>
-</a>
-<div id="description-section">
-    <div class="element-col-name"></div>
-    <div class="element-col-text"></div>
+    <a href="#description-section" class="section-toggle">
+        <h2><?php echo __('Description'); ?><span id="expand-symbol">-</span></h2>
+    </a>
+    <div id="description-section">
+        <div class="element-col-name"></div>
+        <div class="element-col-text"></div>
 <?php foreach ($descriptionElements as $elementName): ?>
     <?php $canHaveRoles = isset($roleMap[$elementName]); ?>
     <?php if(isset($elements[$elementName])): ?>
@@ -94,54 +91,54 @@ $roles = array_keys($roleMap);
             } else {
                 $roles = array();
             }
-?>
+            ?>
             <div class="element-cell element-cell-name">
-                <h3>
-                    <?php echo html_escape(__($elementName)); ?>
-                    <?php echo $roles ? ' (' . __('role') . '):' : ':'; ?>
-                </h3>
+                <?php
+                echo html_escape(__($elementName));
+                echo $roles ? ' (' . __('role') . '):' : ':';
+                ?>
             </div>
-            <div class="element-cell element-cell-text">
-                <?php foreach ($texts as $i => $text): ?>
-                    <div class="element-text">
-                        <?php
-                        if ($elementName == 'Birth Date' OR $elementName == 'Death Date') {
-                            $text = preg_replace('/(.*)-0-0$/', '\1', $text, 1);
-                        }
-                        ?>
-                        <?php echo $text; ?>
-                        <?php if (isset($roles[$i])): ?>
-                            (<?php echo $roles[$i]; ?>)
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
+            <div class="element-cell">
+            <?php foreach ($texts as $i => $text): ?>
+                <div class="element-text">
+                    <?php
+                    if ($elementName == 'Birth Date' OR $elementName == 'Death Date') {
+                        $text = preg_replace('/(.*)-0-0$/', '\1', $text, 1);
+                    }
+                    ?>
+                    <?php echo $text; ?>
+                    <?php if (isset($roles[$i])): ?>
+                        (<?php echo $roles[$i]; ?>)
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
             </div>
         </div><!-- end element -->
     <?php endif; ?>
 <?php endforeach; ?>
 
-</div><!-- end description-section -->
+    </div><!-- end description-section -->
 </div><!-- end item-description -->
 
 <?php if (metadata('item', 'has tags')): ?>
 
 <div id="item-keywords">
     <a href="#keywords-section" class="section-toggle">
-        <h1>
+        <h2>
             <?php echo __('Keywords'); ?>
             <span id="expand-symbol">+</span>
-        </h1>
+        </h2>
     </a>
     <!-- The following prints a list of all tags associated with the item -->
     <div id="keywords-section">
         <div id="item-tags" class="element">
             <div class="element-text">
                 <?php
-try {
-    echo locale_filtered_tag_string('item');
-} catch (Exception $e) {
-    echo tag_string('item');
-}
+                try {
+                    echo locale_filtered_tag_string('item');
+                } catch (Exception $e) {
+                    echo tag_string('item');
+                }
                 ?>
             </div>
         </div>
@@ -154,10 +151,10 @@ try {
 
 <div id="item-works">
 <a href="#works-section" class="section-toggle">
-    <h1>
+    <h2>
         <?php echo __('Works'); ?>
         <span id="expand-symbol">-</span>
-    </h1>
+    </h2>
 </a>
 </div>
 <div id="works-section" class="items-list">
@@ -170,9 +167,9 @@ try {
             </div>
             <?php endif; ?>
 
-            <h2><?php echo link_to_item(
+            <h3><?php echo link_to_item(
                 metadata($work, array('Dublin Core', 'Title')),
-                array('class'=>'permalink'), 'show', $work); ?></h2>
+                array('class'=>'permalink'), 'show', $work); ?></h3>
 
             <?php if ($date_created = metadata($work, array('Dublin Core', 'Date Created'))): ?>
             <div class="item-date-created">
@@ -205,41 +202,42 @@ $moreInfoElements = array(
 
 <div id="item-more-info">
     <a href="#more-info-section" class="section-toggle">
-        <h1>
+        <h2>
             <?php echo __('More Info'); ?>
             <span id="expand-symbol">+</span>
-        </h1>
+        </h2>
     </a>
     <div id="more-info-section">
         <div class="element-col-name"></div>
         <div class="element-col-text"></div>
-    <?php foreach ($moreInfoElements as $elementName): ?>
-        <?php if (isset($elements[$elementName])): ?>
-            <?php $texts = $elements[$elementName]; ?>
-            <div id="item-<?php echo $elementName; ?>" class="element">
-                <?php $elementName = ($elementName == 'Relation') ? 'Link' : $elementName; ?>
-                <div class="element-cell element-cell-name">
-                    <h3><?php echo __($elementName) . ':'; ?></h3>
-                </div>
-                <div class="element-cell element-cell-text">
-                    <?php foreach ($texts as $text): ?>
-                        <div class="element-text">
-                            <?php echo $text; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+<?php foreach ($moreInfoElements as $elementName): ?>
+    <?php if (isset($elements[$elementName])): ?>
+        <?php $texts = $elements[$elementName]; ?>
+        <div id="item-<?php echo $elementName; ?>" class="element">
+            <?php $elementName = ($elementName == 'Relation') ? 'Link' : $elementName; ?>
+            <div class="element-cell element-cell-name">
+                <?php echo __($elementName) . ':'; ?>
             </div>
-        <?php endif; ?>
-    <?php endforeach; ?>
-
-    <!-- The following prints a citation for this item. -->
-    <div id="item-citation" class="element">
-        <div class="element-cell element-cell-name">
-            <h3><?php echo __('Citation') . ':'; ?></h3>
+            <div class="element-cell">
+                <?php foreach ($texts as $text): ?>
+                    <div class="element-text">
+                        <?php echo $text; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
-        <div class="element-cell element-cell-text">
-            <div class="element-text">
-                <?php echo metadata('item', 'citation', array('no_escape' => true)); ?>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+        <!-- The following prints a citation for this item. -->
+        <div id="item-citation" class="element">
+            <div class="element-cell element-cell-name">
+                <?php echo __('Citation') . ':'; ?>
+            </div>
+            <div class="element-cell">
+                <div class="element-text">
+                    <?php echo metadata('item', 'citation', array('no_escape' => true)); ?>
+                </div>
             </div>
         </div>
     </div>

@@ -35,8 +35,13 @@
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
-    <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <nav id="top-nav" role="navigation">
+        <?php echo public_nav_main(); ?>
+    </nav>
+
     <div id="wrap">
+        <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
         <header role="banner">
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
             <?php echo theme_header_image(); ?>
@@ -54,19 +59,24 @@
                 </div>
             </div>
 
+            <div id="top-buttons">
+                <div id="search-container" role="search">
+                    <?php if (get_theme_option('use_advanced_search') === null
+                        || get_theme_option('use_advanced_search')) : ?>
+                    <?php echo search_form(array('show_advanced' => true)); ?>
+                    <?php else: ?>
+                    <?php echo search_form(array('submit_value' => '')); ?>
+                    <?php endif; ?>
+                </div>
 
-            <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null
-                       || get_theme_option('use_advanced_search')) : ?>
-                <?php echo search_form(array('show_advanced' => true)); ?>
-                <?php else: ?>
-                <?php echo search_form(); ?>
-                <?php endif; ?>
+                <div class="lang-select">
+                    <a href="<?php echo current_url(array('lang' => str_replace('-', '_', __('zh-CN')))); ?>">
+                    <?php echo __('中文'); ?>
+                    </a>
+                </div>
+
+                <label for="nav-trigger"><span id="menu-label"><?php echo __('Menu');?></span> &#9776;</label>
             </div>
-
-            <nav id="top-nav" role="navigation">
-                <?php echo filter_nav(public_nav_main(), 'top'); ?>
-            </nav>
         </header>
 
         <article id="content" role="main" tabindex="-1">

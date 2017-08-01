@@ -1,9 +1,6 @@
 @mixin link-button {
-    min-height: 1.5 * $base-line-height;
-    padding: rhythm(.25);
-    display: block;
-    margin-bottom:.5em;
     border: 0;
+    padding: 0;
     &:hover {
         color: $accent-light;
         text-decoration: none;

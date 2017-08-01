@@ -12,8 +12,12 @@
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
-#site-title {@include span-columns (9, 12);}
-#search-container {@include span-columns (3 omega, 12);}
+#site-title {
+    //@include span-columns (3, 8);
+    width: 17em;
+}
+/* #search-container {//@include span-columns (3 omega, 12);}
+} */
 #featured {@include span-columns (7,12);}
 .pagination {@include span-columns(12);}
 #sort-links {@include span-columns(12);}
@@ -63,12 +67,22 @@ div#contribution-type-form div.inputs {@include span-columns (9 omega, 12);}
     }
 }
 
+#menu-label {
+    display: inline-block;
+    margin-left: 0;
+}
+
+label[for="nav-trigger"] {
+    margin-left: 31px;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Search */
 
 #search-container {
-    margin-top: 2em;
+//    margin-top: 2em;
 }
+
 /* -------------------------------------------------------------------------*/
 /* Advanced Search Form */
 #advanced-search-form .field {
