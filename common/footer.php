@@ -2,10 +2,6 @@
 
         <footer role="contentinfo">
 
-            <nav id="bottom-nav">
-                <?php echo filter_nav(public_nav_main(), 'bottom'); ?>
-            </nav>
-
             <div id="footer-text">
                 <?php echo get_theme_option('Footer Text'); ?>
                 <?php if ((get_theme_option('Display Footer Copyright') == 1)
@@ -23,7 +19,6 @@
     jQuery(document).ready(function() {
         Omeka.showAdvancedForm();
         Omeka.skipNav();
-        Omeka.megaMenu('#top-nav, #bottom-nav');
     });
     </script>
 </body>

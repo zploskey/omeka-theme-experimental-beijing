@@ -22,15 +22,13 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_url('//fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic');
-    queue_css_file(array('iconfonts','style'));
+    queue_css_file(array('iconfonts', 'style'));
     echo head_css();
     ?>
 
     <!-- JavaScripts -->
     <?php
-    queue_js_file(array('jquery-accessibleMegaMenu', 'minimalist', 'globals',
-                        'toggle'));
+    queue_js_file(array('globals', 'toggle'));
     echo head_js();
     ?>
 </head>
