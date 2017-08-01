@@ -13,16 +13,16 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 
 <?php echo pagination_links(); ?>
 
-<?php if ($total_results > 0): ?>
+<?php if ($total_results > 0):
 
-<?php
 $sortLinks[__('Title')] = 'Dublin Core,Title';
 $sortLinks[__('Creator')] = 'Dublin Core,Creator';
-$sortLinks[__('Date Created')] = 'Dublin Core,Date Created';
-?>
+$sortLinks[__('Date Created')] = 'Dublin Core,Date Created'; ?>
+
 <div id="sort-links">
     <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
+
 
 <?php endif; ?>
 
@@ -59,11 +59,6 @@ $sortLinks[__('Date Created')] = 'Dublin Core,Date Created';
 </div>
 
 <?php echo pagination_links(); ?>
-
-<div id="outputs">
-    <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
-    <?php echo output_format_list(false); ?>
-</div>
 
 <?php fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
 
