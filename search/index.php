@@ -17,7 +17,6 @@ $searchRecordTypes = get_search_record_types();
     <tbody>
         <?php $filter = new Zend_Filter_Word_CamelCaseToDash; ?>
         <?php foreach (loop('search_texts') as $searchText): ?>
-            
         <?php $record = get_record_by_id($searchText['record_type'], $searchText['record_id']); ?>
         <?php $recordType = $searchText['record_type']; ?>
         <?php set_current_record($recordType, $record); ?>
@@ -29,17 +28,17 @@ $searchRecordTypes = get_search_record_types();
                 <?php if ($recordImage = record_image($recordType, 'square_thumbnail')): ?>
                     <?php echo link_to($record, 'show', $recordImage, array('class' => 'image')); ?>
                 <?php endif; ?>
-                
+
                 <a href="<?php echo record_url($record, 'show'); ?>">
-                    <?php $title = metadata($record, array('Dublin Core', 'Title')); echo $title ? $title : __('[Unknown]'); ?>
+                    <?php $title = metadata($record, array('Dublin Core', 'Title')); echo $title ? $title : '[Unknown]'; ?>
                 </a>
-                
+
                 <?php if ($description = metadata($record, array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
                 <div class="item-description">
                     <?php echo $description; ?>
                 </div>
                 <?php endif; ?>
-                
+
                 <?php if (metadata($record, 'has tags')): ?>
                 <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
                     <?php echo tag_string('items'); ?></p>
