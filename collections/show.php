@@ -1,32 +1,31 @@
-<?php
-$collectionTitle = metadata('collection', 'display_title');
-?>
+<?php $collectionTitle = __(metadata('collection', 'display_title')); ?>
 
 <?php echo head(array('title'=> $collectionTitle, 'bodyclass' => 'collections show')); ?>
 
 <h1><?php echo $collectionTitle; ?></h1>
 
-<?php echo all_element_texts('collection'); ?>
+<?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
+
+<?php $counts = @$this->counts; ?>
+
+<div class="element-text">
+    <?php echo metadata('collection', array('Dublin Core', 'Description')); ?>
+</div>
 
 <div id="collection-items">
-    <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
+    <h2></h2>
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
-        <?php $itemTitle = metadata('item', 'display_title'); ?>
+        <?php $itemTitle = metadata('item', array('Dublin Core', 'Title')); ?>
         <div class="item hentry">
-            <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
-
             <?php if (metadata('item', 'has thumbnail')): ?>
             <div class="item-img">
                 <?php echo link_to_item(item_image(null, array('alt' => $itemTitle))); ?>
             </div>
             <?php endif; ?>
 
-            <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
-            <div class="item-description">
-                <?php echo $description; ?>
-            </div>
-            <?php endif; ?>
+            <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
+            <p><?php echo isset($counts) ? $counts[$item->id].' '.__('ITEMS') : ''; ?></p>
         </div>
         <?php endforeach; ?>
     <?php else: ?>
@@ -34,6 +33,5 @@ $collectionTitle = metadata('collection', 'display_title');
     <?php endif; ?>
 </div><!-- end collection-items -->
 
-<?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
 
 <?php echo foot(); ?>

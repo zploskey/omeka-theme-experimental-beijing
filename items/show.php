@@ -36,6 +36,8 @@
     </div>
 </div>
 
+<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+
 <?php
 $elementSets = all_element_texts('item', array('return_type' => 'array'));
 
@@ -242,8 +244,6 @@ $moreInfoElements = array(
         </div>
     </div>
 </div><!-- end more-info-section -->
-
-<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </div><!-- end element-set -->
 
