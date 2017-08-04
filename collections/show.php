@@ -25,13 +25,19 @@
             <?php endif; ?>
 
             <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
-            <p><?php echo isset($counts) ? $counts[$item->id].' '.__('ITEMS') : ''; ?></p>
+            <p><?php
+                if (isset($counts[$item->id])) {
+                    echo $counts[$item->id];
+                } else {
+                    echo 0;
+                }
+                echo ' '.__('ITEMS');
+                ?></p>
         </div>
         <?php endforeach; ?>
     <?php else: ?>
         <p><?php echo __("There are currently no items within this collection."); ?></p>
     <?php endif; ?>
 </div><!-- end collection-items -->
-
 
 <?php echo foot(); ?>
