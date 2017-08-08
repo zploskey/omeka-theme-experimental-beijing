@@ -26,7 +26,7 @@
             <?php endif; ?>
 
             <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
-            <p><?php echo __('%s ITEMS', $workCount); ?></p>
+            <p><?php echo __(plural('%d ITEM', '%d ITEMS', $workCount), $workCount); ?></p>
         </div>
         <?php endforeach; ?>
     <?php else: ?>
