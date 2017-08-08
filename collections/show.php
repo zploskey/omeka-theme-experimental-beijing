@@ -17,6 +17,7 @@
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = metadata('item', array('Dublin Core', 'Title')); ?>
+        <?php $workCount = isset($counts[$item->id]) ? $counts[$item->id] : 0; ?>
         <div class="item hentry">
             <?php if (metadata('item', 'has thumbnail')): ?>
             <div class="item-img">
@@ -25,14 +26,7 @@
             <?php endif; ?>
 
             <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
-            <p><?php
-                if (isset($counts[$item->id])) {
-                    echo $counts[$item->id];
-                } else {
-                    echo 0;
-                }
-                echo ' '.__('ITEMS');
-                ?></p>
+            <p><?php echo __('%s ITEMS', $workCount); ?></p>
         </div>
         <?php endforeach; ?>
     <?php else: ?>
