@@ -1,7 +1,5 @@
 @import "base";
 @import "mixins";
-@import "compass";
-//@import "blueprint/form";
 
 /* -------------------------------------------------------------------------*/
 /* Table of Contents
@@ -28,28 +26,26 @@
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
+
 #wrap {
     @include container;
-/*    @include susy-grid-background;
-*/
-    overflow: hidden;
+    margin: 0;
+    overflow: visible;
 }
-.nav-menu {@include span-columns(12); margin-right:0;}
-#content {@include span-columns(12 omega);}
-.pagination {@include span-columns(12);}
-#item-filters {@include span-columns(12 omega);}
-#sort-links{@include span-columns(12);}
-#outputs {@include span-columns(12)}
-#advanced-search-form label {@include span-columns(12);}
-#advanced-search-form .inputs {@include span-columns(12 omega);}
-footer {@include span-columns(12 omega);}
+
+.nav-menu {@include span(12); margin-right:0;}
+header[role="banner"] {@include span(12 last)};
+#content {@include span(12 last);}
+.pagination {@include span(12);}
+#item-filters {@include span(12 last);}
+#sort-links {@include span(12);}
+#outputs {@include span(12)}
+#advanced-search-form label {@include span(12);}
+#advanced-search-form .inputs {@include span(12 last);}
+footer {@include span(12 last);}
 
 /* -------------------------------------------------------------------------*/
 /* General Styles */
-
-* {
-    @include box-sizing(border-box);
-}
 
 body {
     background-color: $background-color;
@@ -58,7 +54,7 @@ body {
     line-height: $base-line-height;
     color: $text-color;
     margin: 0;
-    overflow-x: none;
+    overflow: none;
 }
 
 .element-set,
@@ -128,11 +124,6 @@ body {
 
 .intro {
     font-style: italic;
-}
-
-#content {
-    padding: 1em 0 2em 0;
-    overflow: auto;
 }
 
 abbr, acronym {
@@ -212,19 +203,14 @@ h6 {
 }
 
 header[role="banner"] {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 108px;
-    width: 100%;
-    z-index: 50;
+    min-height: 108px;
+    margin-bottom: 10px;
     a {
         color: $accent-dark;
     }
 }
 
 #site-title {
-    float: left;
     color: $accent-dark;
     font-family: $font-family-title;
     font-size: $base-font-size * 1.4;
@@ -235,19 +221,23 @@ header[role="banner"] {
         text-decoration: none;
         color: $accent-dark;
     }
+    margin-bottom: 10px;
 }
 
 #site-subtitle {
     color: $accent-light;
-    font-size: $base-font-size * 0.9;
+    font-size: $base-font-size * 0.8;
     line-height: $base-line-height * 0.75;
     margin-top: 0px;
     text-transform: none;
 }
 
 #top-buttons {
-    width: 500px;
-    font-size: 26px;
+    float: right;
+    font-size: 25px;
+    > * {
+        display: inline-block;
+    }
     a {
         color: $accent-dark;
         text-decoration: none;
@@ -256,25 +246,15 @@ header[role="banner"] {
 
 /* -------------------------------------------------------------------------*/
 /* Links */
+
 a {
     @include link-colors($active-color, saturate($active-color,5%), $active-color, lighten($active-color, 10%), $active-color);
     text-decoration: none;
     &:hover{text-decoration:underline;}
 }
 
-
 /* -------------------------------------------------------------------------*/
 /* General Navigation */
-
-#wrap {
-    min-width: 100%;
-    min-height: 100%;
-    position: relative;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    z-index: 1;
-}
 
 #nav-trigger {
     display: none;
@@ -325,13 +305,16 @@ label[for="nav-trigger"] {
     display: none;
 }
 
+label[for="nav-trigger"] {
+    margin-left: 31px;
+}
+
 .nav-trigger:checked ~ #top-nav {
     display: block;
 }
 
 .lang-select {
     color: $accent-dark;
-    display: inline-block;
     margin-left: 31px;
 }
 
@@ -490,11 +473,10 @@ button,
 /*-- Search--*/
 
 #search-container {
-    display: inline-block;
-
     input[type=text] {
         margin: 0;
-        width: 150px;
+        width: 100px;
+        font-size: 25px;
     }
 
     .show-advanced,

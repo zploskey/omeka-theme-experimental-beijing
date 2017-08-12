@@ -8,10 +8,9 @@
 
 .jcarousel {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* keeps forward/back buttons in right place */
     max-height: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
 }
 
 .jcarousel ul {
@@ -40,6 +39,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    background-color: black;
 }
 
 p.shortcode-carousel-title {

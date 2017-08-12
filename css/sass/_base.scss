@@ -1,17 +1,23 @@
 // ---------------------------------------------------------------------------
 // Imports
 
-@import "susyone";
+@import "susy";
+@import "compass";
 
 // ---------------------------------------------------------------------------
 // Basic Grid
 
-$total-columns: 12;
-$column-width: 6em;
-$gutter-width: 1em;
-$grid-padding: $gutter-width;
+$susy: (
+  // the basics
+  columns: 12,
+  gutters: 1 / 6,
+  global-box-sizing: border-box,
+  debug: (image: hide),
+);
 
-$show-grid-backgrounds: true;
+@include border-box-sizing;
+
+$content-margin: 9.6528vw;
 
 // ---------------------------------------------------------------------------
 // Color
@@ -53,7 +59,7 @@ $font-family-title: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucid
   padding: 5px;
   display: block;
   background-color: $accent-light;
-  margin-bottom: .5em;
+  margin-bottom: 10px;
 
   &:hover {
     color: $accent-light;
