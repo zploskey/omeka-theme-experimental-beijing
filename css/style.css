@@ -557,7 +557,7 @@ body {
   background-color: #fff;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-size: 20px;
-  line-height: 28px;
+  line-height: 32px;
   color: #444;
   margin: 0;
   overflow: none;
@@ -623,13 +623,13 @@ body {
 #recent-items h2,
 #recent-items #item-filters .collection,
 #item-filters #recent-items .collection {
-  padding-top: 0.93333em;
+  padding-top: 1.06667em;
 }
 #featured-item .image,
 #featured-collection .image,
 #featured-exhibit .image,
 #recent-items .image {
-  margin-top: 1.4em;
+  margin-top: 1.6em;
 }
 #featured-item img,
 #featured-collection img,
@@ -708,7 +708,7 @@ footer {
 h1, h2, #item-filters .collection, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   font-weight: normal;
-  line-height: 42px;
+  line-height: 48px;
   padding: .5em 0;
   margin: 0;
   color: #555;
@@ -716,7 +716,7 @@ h1, h2, #item-filters .collection, h3, h4, h5, h6 {
 
 h4, h5, h6 {
   font-style: 22.5px;
-  line-height: 31.5px;
+  line-height: 36px;
 }
 
 h5, h6 {
@@ -725,19 +725,19 @@ h5, h6 {
 
 h1 {
   font-size: 48px;
-  line-height: 67.2px;
+  line-height: 76.8px;
   clear: both;
   word-wrap: break-word;
 }
 
 h2, #item-filters .collection {
   font-size: 35px;
-  line-height: 42px;
+  line-height: 48px;
 }
 
 h3 {
   font-size: 25px;
-  line-height: 35px;
+  line-height: 40px;
 }
 
 h6 {
@@ -757,7 +757,7 @@ header[role="banner"] a {
   font-family: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   font-size: 28px;
   font-weight: bold;
-  line-height: 33.6px;
+  line-height: 38.4px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -769,7 +769,7 @@ header[role="banner"] a {
 #site-subtitle {
   color: #999999;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 24px;
   margin-top: 0px;
   text-transform: none;
 }
@@ -873,7 +873,7 @@ label[for="nav-trigger"] {
 .navigation,
 #sort-links {
   font-size: 25px;
-  line-height: 35px;
+  line-height: 40px;
   padding: 0;
 }
 .navigation ul,
@@ -885,7 +885,7 @@ label[for="nav-trigger"] {
 
 .navigation #sort-links {
   font-size: 20px;
-  line-height: 28px;
+  line-height: 32px;
 }
 .navigation #sort-links li {
   display: inline;
@@ -986,8 +986,8 @@ label[for="nav-trigger"] {
 .pagination_next a:after
 .pagination_previous a:after {
   font-family: "FontAwesome";
-  height: 42px;
-  line-height: 42px;
+  height: 48px;
+  line-height: 48px;
 }
 
 .item-pagination {
@@ -1052,8 +1052,8 @@ select {
   -webkit-border-radius: 0px;
   border-radius: 0px;
   border: 1px solid #999999;
-  height: 42px;
-  line-height: 42px;
+  height: 48px;
+  line-height: 48px;
   font-size: 20px;
   margin-right: 3px !important;
   display: inline-block;
@@ -1106,10 +1106,10 @@ button:hover,
   color: #333333;
   background-color: #fff;
   font-size: 25px;
-  line-height: 28px;
+  line-height: 32px;
 }
 #search-container.with-advanced .show-advanced {
-  right: 44.3324px;
+  right: 50.6656px;
 }
 #search-container.with-advanced button {
   right: 0;
@@ -1127,7 +1127,7 @@ button:hover,
 }
 #search-container #advanced-form {
   position: absolute;
-  top: 42px;
+  top: 48px;
   z-index: 20;
   width: 100%;
   border: 1px solid;
@@ -1144,7 +1144,7 @@ button:hover,
 }
 #search-container #advanced-form input[type=checkbox],
 #search-container #advanced-form input[type=radio] {
-  margin: 0.35em 5px 0 0;
+  margin: 0.4em 5px 0 0;
   float: left;
 }
 
@@ -1152,7 +1152,7 @@ button:hover,
 #item-filters ul {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 1.4em;
+  margin-bottom: 1.6em;
 }
 #search-filters li,
 #item-filters li {
@@ -1202,11 +1202,11 @@ button:hover,
 }
 
 .remove_search {
-  padding: 0.35em 10px;
+  padding: 0.4em 10px;
   text-indent: -9999px;
-  width: 42px;
+  width: 48px;
   position: relative;
-  height: 42px;
+  height: 48px;
   display: inline-block;
 }
 .remove_search:after {
@@ -1218,7 +1218,7 @@ button:hover,
   top: 0;
   left: 0;
   position: absolute;
-  line-height: 42px;
+  line-height: 48px;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -1245,7 +1245,7 @@ th {
 /* Browse and Item Pages */
 #recent-items .item {
   border-bottom: 1px solid #999999;
-  margin-bottom: 1.4em;
+  margin-bottom: 1.6em;
 }
 
 .item.hentry {
@@ -1322,7 +1322,7 @@ th {
 
 #itemfiles .download-link {
   display: block;
-  height: 7em;
+  height: 8em;
 }
 #itemfiles .download-link img {
   height: 100%;
@@ -1332,7 +1332,7 @@ th {
 /* -------------------------------------------------------------------------*/
 /* File Pages */
 body.files .item-file {
-  margin-bottom: 1.4em;
+  margin-bottom: 1.6em;
 }
 
 #sidebar {
@@ -1364,8 +1364,8 @@ body.files .item-file {
 
 .image {
   float: right;
-  margin: 0 0 1.4em 1.4em;
-  height: 7em;
+  margin: 0 0 1.6em 1.6em;
+  height: 8em;
 }
 .image img {
   float: left;
@@ -1391,7 +1391,7 @@ body.files .item-file {
 }
 .hTagcloud ul li {
   display: inline-block;
-  margin: 7px 20px;
+  margin: 8px 20px;
   margin-left: 0;
 }
 .hTagcloud ul li a {
@@ -1678,6 +1678,7 @@ body.files .item-file {
 #more-info-section .element .element-cell {
   display: table-cell;
   vertical-align: top;
+  line-height: 35px;
 }
 #about-section .element .element-cell-name,
 #more-info-section .element .element-cell-name {
