@@ -4,8 +4,18 @@
 <p class="intro"><?php echo $homepageText; ?></p>
 <?php endif; ?>
 
+<?php
+if ($featuredItem = get_theme_option('Display Featured Item')
+    OR $featuredCollection = get_theme_option('Display Featured Collection')
+    OR (
+        $featuredExhibit = get_theme_option('Display Featured Exhibit')
+            AND plugin_is_active('ExhibitBuilder')
+            AND function_exists('exhibit_builder_random_featured_exhibit')
+    )
+):
+?>
 <div id="featured">
-    <?php if (get_theme_option('Display Featured Item') == 1) : ?>
+    <?php if ($featuredItem) : ?>
     <!-- Featured Item -->
     <div id="featured-items">
         <h2><?php echo __('Featured Item'); ?></h2>
@@ -14,7 +24,7 @@
      <!--end featured-item-->
     <?php endif; ?>
 
-    <?php if (get_theme_option('Display Featured Collection')) : ?>
+    <?php if ($featuredCollection) : ?>
     <!-- Featured Collection -->
     <div id="featured-collection">
         <h2><?php echo __('Featured Collection'); ?></h2>
@@ -23,17 +33,14 @@
      <!-- End Featured Collection -->
     <?php endif; ?>
 
-<?php
-if ((get_theme_option('Display Featured Exhibit'))
-    && plugin_is_active('ExhibitBuilder')
-    && function_exists('exhibit_builder_random_featured_exhibit')
-) : ?>
+<?php if ($featuredExhibit): ?>
     <!-- Featured Exhibit -->
     <div class="featured-exhibit">
         <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
     </div>
     <?php endif; ?>
 </div><!-- End Featured/Primary Column -->
+<?php endif; ?>
 
 <?php
 if (get_theme_option('Display Recent Items')) {
