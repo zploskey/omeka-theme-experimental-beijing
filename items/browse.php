@@ -1,5 +1,5 @@
 <?php
-$pageTitle = __('Browse Items');
+$pageTitle = __('Browse Images');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
