@@ -1,4 +1,5 @@
 @import "base";
+@import "compass";
 
 /* -------------------------------------------------------------------------*/
 /* Table of Contents
@@ -37,28 +38,28 @@ header[role="banner"] {
     justify-content: flex-end;
 }
 
-#featured {@include span(last 5)}
+#featured {@include span(last 5);}
 .pagination {@include span(12);}
 #sort-links {@include span(12);}
-#recent-items {@include span(7 at 5)}
+#recent-items {@include span(7 at 5);}
 #advanced-search-form label,
 #advanced-search-form .label,
-.field .columns.alpha {@include span(9 at 3)}
+.field .columns.alpha {@include span(9 at 3);}
 #advanced-search-form .inputs,
 .field .columns.omega,
 .field .inputs,
-div#contribution-type-form div.inputs {@include span(last 3)}
+div#contribution-type-form div.inputs {@include span(last 3);}
 
 .exhibits.summary #primary,
 .exhibits.summary #content > h1:first-of-type,
 .exhibits.show #content > h1:first-of-type,
 #exhibit-blocks,
 #exhibit-page-navigation {
-    @include span(5 at 8);
+    @include span(8);
 }
 
 .exhibits #exhibit-pages:not(.full) {
-    width: columns(4);
+    @include span(4 last);
     display: inline-block;
     margin-right: 0;
 }

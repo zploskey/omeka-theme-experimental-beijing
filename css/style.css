@@ -1796,11 +1796,12 @@ body.files .item-file {
   .exhibits.show #content > h1:first-of-type,
   #exhibit-blocks,
   #exhibit-page-navigation {
-    width: 40.96386%;
+    width: 66.26506%;
+    float: left;
   }
 
   .exhibits #exhibit-pages:not(.full) {
-    width: columns(4);
+    width: 32.53012%;
     display: inline-block;
     margin-right: 0;
   }
