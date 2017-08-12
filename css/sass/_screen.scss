@@ -34,15 +34,15 @@
 }
 
 .nav-menu {@include span(12); margin-right:0;}
-header[role="banner"] {@include span(12 last)};
-#content {@include span(12 last);}
-.pagination {@include span(12);}
-#item-filters {@include span(12 last);}
+header[role="banner"] {@include span(12);}
+#content {@include span(12);}
+.pagination-nav {@include span(12);}
+#item-filters {@include span(12);}
 #sort-links {@include span(12);}
 #outputs {@include span(12)}
 #advanced-search-form label {@include span(12);}
-#advanced-search-form .inputs {@include span(12 last);}
-footer {@include span(12 last);}
+#advanced-search-form .inputs {@include span(12);}
+footer {@include span(12);}
 
 /* -------------------------------------------------------------------------*/
 /* General Styles */
@@ -375,9 +375,9 @@ label[for="nav-trigger"] {
   }
 }
 
-
 .pagination {
     @include horizontal-list;
+    float: right;
     .page-input {
         form {
             padding: 0;
@@ -398,11 +398,6 @@ label[for="nav-trigger"] {
         @include link-button;
         line-height: $base-font-size * 1.5;
     }
-}
-
-.pagination-nav {
-    float: right;
-    display: inline-block;
 }
 
 .pagination_next a:after

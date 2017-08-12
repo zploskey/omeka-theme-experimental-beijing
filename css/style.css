@@ -490,17 +490,19 @@ template {
 
 header[role="banner"] {
   width: 100%;
-  float: right;
+  float: left;
+  margin-left: 0;
   margin-right: 0;
 }
 
 #content {
   width: 100%;
-  float: right;
+  float: left;
+  margin-left: 0;
   margin-right: 0;
 }
 
-.pagination {
+.pagination-nav {
   width: 100%;
   float: left;
   margin-left: 0;
@@ -509,7 +511,8 @@ header[role="banner"] {
 
 #item-filters {
   width: 100%;
-  float: right;
+  float: left;
+  margin-left: 0;
   margin-right: 0;
 }
 
@@ -536,13 +539,15 @@ header[role="banner"] {
 
 #advanced-search-form .inputs {
   width: 100%;
-  float: right;
+  float: left;
+  margin-left: 0;
   margin-right: 0;
 }
 
 footer {
   width: 100%;
-  float: right;
+  float: left;
+  margin-left: 0;
   margin-right: 0;
 }
 
@@ -931,6 +936,7 @@ label[for="nav-trigger"] {
   border: 0;
   overflow: hidden;
   *zoom: 1;
+  float: right;
 }
 .pagination li {
   list-style-image: none;
@@ -975,11 +981,6 @@ label[for="nav-trigger"] {
 .pagination .next-page a:hover {
   color: #999999;
   text-decoration: none;
-}
-
-.pagination-nav {
-  float: right;
-  display: inline-block;
 }
 
 .pagination_next a:after
@@ -1760,20 +1761,6 @@ body.files .item-file {
 
   #featured {
     width: 40.96386%;
-  }
-
-  .pagination {
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #sort-links {
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   #recent-items {

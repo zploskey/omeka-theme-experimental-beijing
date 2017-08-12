@@ -39,8 +39,6 @@ header[role="banner"] {
 }
 
 #featured {@include span(last 5);}
-.pagination {@include span(12);}
-#sort-links {@include span(12);}
 #recent-items {@include span(7 at 5);}
 #advanced-search-form label,
 #advanced-search-form .label,
