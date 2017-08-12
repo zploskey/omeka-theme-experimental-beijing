@@ -1248,15 +1248,19 @@ th {
 }
 
 .item.hentry {
-  min-width: 329px;
-  max-width: 100%;
+  width: 100%;
   min-height: 50px;
   vertical-align: top;
   display: inline-block;
-  padding: 8px;
+  padding: 20px;
 }
 .item.hentry .item-img {
+  width: 100%;
   text-align: center;
+}
+.item.hentry .item-img img {
+  max-width: 450px;
+  width: 100%;
 }
 
 #item-top {
@@ -1813,6 +1817,7 @@ body.files .item-file {
 
   .item.hentry {
     width: 329px;
+    padding: 8px;
   }
 
   /* -------------------------------------------------------------------------*/
