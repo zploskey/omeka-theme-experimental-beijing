@@ -1653,28 +1653,28 @@ body.files .item-file {
   font-size: 21px;
 }
 
-#description-section,
+#about-section,
 #more-info-section {
   display: table;
   margin-bottom: 5em;
   border-spacing: 0 20px;
 }
-#description-section .element-col-name,
-#description-section .element-col-text,
+#about-section .element-col-name,
+#about-section .element-col-text,
 #more-info-section .element-col-name,
 #more-info-section .element-col-text {
   display: table-column;
 }
-#description-section .element,
+#about-section .element,
 #more-info-section .element {
   display: table-row;
 }
-#description-section .element .element-cell,
+#about-section .element .element-cell,
 #more-info-section .element .element-cell {
   display: table-cell;
   vertical-align: top;
 }
-#description-section .element .element-cell-name,
+#about-section .element .element-cell-name,
 #more-info-section .element .element-cell-name {
   float: left;
   margin-right: 40px;
@@ -1687,13 +1687,13 @@ body.files .item-file {
   display: none;
 }
 
-#item-description,
+#item-about,
 #item-keywords,
 #item-works,
 #item-more-info {
   border-top: 1px solid #999999;
 }
-#item-description a,
+#item-about a,
 #item-keywords a,
 #item-works a,
 #item-more-info a {

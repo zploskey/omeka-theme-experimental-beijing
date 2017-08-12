@@ -46,7 +46,7 @@ foreach ($elementSets as $elementName => $elementInfo) {
     $elements = array_merge($elements, $elementInfo);
 }
 
-$descriptionElements = array(
+$aboutElements = array(
     'Title',
     'Last Name',
     'First Name',
@@ -75,14 +75,14 @@ $roles = array_keys($roleMap);
 
 <div class="element-set">
 
-<div id="item-description">
-    <a href="#description-section" class="section-toggle">
-        <h2><?php echo __('Description'); ?><span id="expand-symbol">-</span></h2>
+<div id="item-about">
+    <a href="#about-section" class="section-toggle">
+        <h2><?php echo __('About'); ?><span id="expand-symbol">-</span></h2>
     </a>
-    <div id="description-section">
+    <div id="about-section">
         <div class="element-col-name"></div>
         <div class="element-col-text"></div>
-<?php foreach ($descriptionElements as $elementName): ?>
+<?php foreach ($aboutElements as $elementName): ?>
     <?php $canHaveRoles = isset($roleMap[$elementName]); ?>
     <?php if(isset($elements[$elementName])): ?>
         <?php $texts = $elements[$elementName]; ?>
@@ -119,8 +119,8 @@ $roles = array_keys($roleMap);
     <?php endif; ?>
 <?php endforeach; ?>
 
-    </div><!-- end description-section -->
-</div><!-- end item-description -->
+    </div><!-- end about-section -->
+</div><!-- end item-about -->
 
 <?php if (metadata('item', 'has tags')): ?>
 
