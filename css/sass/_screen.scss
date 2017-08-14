@@ -152,6 +152,38 @@ blockquote {
     }
 }
 
+.chapters-index {
+    h1 {
+        text-align: center;
+    }
+}
+
+.chapters {
+    list-style: none;
+    .part-title {
+        font-size: 24px;
+        font-weight: light;
+    }
+    .part-subtitle {
+        color: black;
+        font-size: 28px;
+        margin-bottom: 40px;        
+    }
+    ul {
+        list-style: none;
+        margin-bottom: 40px;
+        .chapter-number {
+            font-size: 16px;
+            font-weight: light;
+        }
+        .chapter-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
 #outputs {
     margin-top: 1em;
 }
