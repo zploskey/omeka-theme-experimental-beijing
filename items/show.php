@@ -3,7 +3,21 @@
 <div id="item-top">
     <div id="item-top-media">
         <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-        <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+        <?php echo files_for_item(
+            array(
+                'imageSize' => 'fullsize',
+                'linkAttributes' => array(
+                    'class' => 'lightbox-link',
+                    'href' => '#lightbox',
+                )
+            )
+        ); ?>
+        <div id="lightbox">
+            <?php echo files_for_item(
+                array('imageSize' => 'fullsize')
+            ); ?>
+            <a id="close" href="#_">Close</a>
+        </div>
         <?php endif; ?>
 
         <!-- The following returns all of the files associated with an item. -->
