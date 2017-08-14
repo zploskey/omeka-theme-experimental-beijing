@@ -3,7 +3,19 @@
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
 <?php echo exhibit_builder_page_nav(); ?>
 
+<?php
+$pageTree = exhibit_builder_page_tree();
+if ($pageTree):
+?>
+<nav id="exhibit-pages">
+    <h4><?php echo exhibit_builder_link_to_exhibit($exhibit,
+                        null, array('class' => 'active')); ?></h4>
+    <?php echo $pageTree; ?>
+</nav>
+<?php endif; ?>
+
 <div id="primary">
+
 <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
 <div class="exhibit-description">
     <?php echo $exhibitDescription; ?>
@@ -17,14 +29,5 @@
 </div>
 <?php endif; ?>
 </div>
-
-<?php
-$pageTree = exhibit_builder_page_tree();
-if ($pageTree):
-?>
-<nav id="exhibit-pages">
-    <?php echo $pageTree; ?>
-</nav>
-<?php endif; ?>
 
 <?php echo foot(); ?>

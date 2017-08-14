@@ -168,7 +168,7 @@ blockquote {
     .part-subtitle {
         color: black;
         font-size: 28px;
-        margin-bottom: 40px;        
+        margin-bottom: 40px;
     }
     ul {
         list-style: none;
@@ -925,18 +925,23 @@ body.files .item-file {
 
 #exhibit-pages:not(.full) {
     padding-top:0;
+    a {
+        color: $grey-light;
+        &:hover{text-decoration:none;}
+    }
     ul {
         padding:0;
         list-style-type: none;
         li {
             padding: .5em 0;
-            display:block;
+            display: inline-block;
 
             a {
-                display:block;
+                color: $grey-light;
+                display: block;
                 padding-left:1em;
-                &:hover{text-decoration:none;}
             }
+
             ul a {
                 &:before {
                     content: "\2014\0020";
@@ -945,12 +950,17 @@ body.files .item-file {
         }
     }
 
+    li.current a,
+    a.active {
+        color: $active-color;
+    }
+
     & > ul {
         margin-left: 0;
     }
 
     & > ul > li {
-        border-top: 2px solid $grey-light;
+
     }
 }
 
@@ -961,14 +971,12 @@ body.files .item-file {
 
 #exhibit-pages.full {
     border-color: $grey-light;
-    @include leading-border(2px, 0, $base-font-size, solid);
 
     ul {
         margin: 1em 0 0 0;
         list-style-type: none;
         li {
             display: block;
-            border-top: 2px solid $grey-light;
 
             a {
                 display: block;
@@ -1066,30 +1074,6 @@ body.files .item-file {
     }
     .exhibit-items.right {
         margin-left: 5%;
-    }
-}
-
-#exhibit-page-navigation {
-    clear: both;
-    margin: 0;
-    padding: 1em 0em;
-
-    #exhibit-nav-next,
-        #exhibit-nav-prev {
-            width: 45%;
-            margin: .5em 0;
-        }
-    .current-page {
-        clear: both;
-        display: block;
-        background-color: $accent-main;
-        padding: .5em 0;
-        color: white;
-        margin-top: .5em;
-    }
-    #exhibit-nav-up {
-        clear: both;
-        width: 100%;
     }
 }
 

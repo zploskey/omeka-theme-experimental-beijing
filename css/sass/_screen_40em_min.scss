@@ -48,19 +48,18 @@ header[role="banner"] {
 .field .inputs,
 div#contribution-type-form div.inputs {@include span(last 3);}
 
+.exhibits #exhibit-pages {
+    @include span(4);
+}
+
 .exhibits.summary #primary,
 .exhibits.summary #content > h1:first-of-type,
 .exhibits.show #content > h1:first-of-type,
-#exhibit-blocks,
-#exhibit-page-navigation {
-    @include span(8);
+#exhibit-blocks {
+    @include span(8 last);
+    float: right;
 }
 
-.exhibits #exhibit-pages:not(.full) {
-    @include span(4 last);
-    display: inline-block;
-    margin-right: 0;
-}
 
 .full ~ #exhibit-blocks,
 .full ~ #exhibit-page-navigation {
@@ -127,6 +126,8 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 }
 .exhibits.summary #exhibit-pages {
     padding-top: 0;
+    height: 100%;
+    margin-right: 0;
 }
 .exhibits.show {
     #secondary-nav.exhibit-page-nav li {
