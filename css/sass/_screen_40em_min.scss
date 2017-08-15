@@ -118,17 +118,33 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 /* -------------------------------------------------------------------------*/
 /* Exhibits */
 
-.exhibits.summary #primary {
-    .exhibit-description,
-    .exhibit-credits {
-        padding-right: 1em;
+.exhibits #exhibit-pages {
+    display: block;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    ul {
+        display: block;
+        li {
+            display: block;
+            padding-left: 30px;
+            text-align: left;
+            a {
+                background: transparent;
+                display: block;
+                border: none;
+            }
+        }
+        li:first-of-type {
+            padding-left: 0;
+        }
+    }
+    li.current a,
+    a.active {
+        background: transparent;
     }
 }
-.exhibits.summary #exhibit-pages {
-    padding-top: 0;
-    height: 100%;
-    margin-right: 0;
-}
+
 .exhibits.show {
     #secondary-nav.exhibit-page-nav li {
         float: left;

@@ -472,7 +472,7 @@ label[for="nav-trigger"] {
 
 select {
     @include border-radius(0px);
-    border: 1px solid $grey-light;
+    border: 1px solid $grey-medium;
     height: 1.5 * $base-line-height;
     line-height: 1.5 * $base-line-height;
     font-size: $base-font-size;
@@ -482,7 +482,7 @@ select {
 
 input[type=text],
 input[type=password] {
-    border-color: $grey-light;
+    border-color: $grey-medium;
     @include rhythm-borders(1px, 0, $base-font-size, solid);
     height: 26px;
 }
@@ -550,7 +550,7 @@ button,
         z-index: 20;
         width: 100%;
         border: 1px solid;
-        border-color: $grey-light;
+        border-color: $grey-medium;
         border-top-color: #fff;
         padding: 0 5%;
         text-align: left;
@@ -612,7 +612,7 @@ button,
 /* Advanced Search Form */
 
 .field {
-    border-top:1px solid $grey-light;
+    border-top:1px solid $grey-medium;
     overflow: auto;
 
     label {
@@ -657,7 +657,7 @@ table {
 }
 th,
 td {
-    border-bottom:1px solid $grey-light;
+    border-bottom:1px solid $grey-medium;
     margin:0;
     padding:0.5em 0;
 }
@@ -670,7 +670,7 @@ th {
 /* Browse and Item Pages */
 
 #recent-items .item {
-    border-bottom:1px solid $grey-light;
+    border-bottom:1px solid $grey-medium;
     @include trailer();
 }
 
@@ -798,7 +798,7 @@ body.files .item-file {
     }
 
     .item {
-        border-top:1px solid $grey-light;
+        border-top:1px solid $grey-medium;
     }
 }
 #item-filters {
@@ -924,24 +924,31 @@ body.files .item-file {
 /* Exhibits */
 
 #exhibit-pages:not(.full) {
-    padding-top:0;
-    a {
-        color: $grey-light;
-        &:hover{text-decoration:none;}
-    }
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     ul {
-        padding:0;
+        height: 100%;
+        width: 100%;
+        display: table;
+        margin: 0;
+        padding: 0;
         list-style-type: none;
         li {
-            padding: .5em 0;
-            display: inline-block;
-
+            height: 100%;
+            display: table-cell;
+            text-align: center;
+            vertical-align: top;
             a {
-                color: $grey-light;
+                padding: 10px;
+                &:hover{text-decoration:none;}
+                height: 100%;
                 display: block;
-                padding-left:1em;
+                border: 1px solid $grey-light;
+                color: $grey-medium;
+                overflow: auto;
             }
-
             ul a {
                 &:before {
                     content: "\2014\0020";
@@ -952,15 +959,8 @@ body.files .item-file {
 
     li.current a,
     a.active {
+        background: $grey-light;
         color: $active-color;
-    }
-
-    & > ul {
-        margin-left: 0;
-    }
-
-    & > ul > li {
-
     }
 }
 
@@ -970,7 +970,7 @@ body.files .item-file {
 }
 
 #exhibit-pages.full {
-    border-color: $grey-light;
+    border-color: $grey-medium;
 
     ul {
         margin: 1em 0 0 0;
@@ -1119,14 +1119,14 @@ body.files .item-file {
 #item-keywords,
 #item-works,
 #item-more-info {
-    border-top: 1px solid $grey-light;
+    border-top: 1px solid $grey-medium;
     a {
         text-decoration: none;
     }
 }
 
 #item-more-info {
-    border-bottom: 1px solid $grey-light;
+    border-bottom: 1px solid $grey-medium;
 }
 
 #expand-symbol {

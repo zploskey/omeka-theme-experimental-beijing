@@ -5,12 +5,18 @@
 
 <?php
 $pageTree = exhibit_builder_page_tree();
+
 if ($pageTree):
 ?>
+
 <nav id="exhibit-pages">
-    <h4><?php echo exhibit_builder_link_to_exhibit($exhibit,
-                        null, array('class' => 'active')); ?></h4>
-    <?php echo $pageTree; ?>
+    <?php
+    $link = exhibit_builder_link_to_exhibit($exhibit, null,
+                                            array('class' => 'active')
+    );
+    $pageTree = preg_replace('/^<ul><li/', "<ul><li>$link</li><li", $pageTree, 1);
+    echo $pageTree;
+    ?>
 </nav>
 <?php endif; ?>
 
