@@ -24,6 +24,10 @@ header[role="banner"] {
 
 #top-nav {
     width: 468px;
+    top: 108px;
+    #in-nav-trigger {
+        display: none;
+    }
 }
 
 #site-title {

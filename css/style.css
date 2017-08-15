@@ -849,11 +849,10 @@ a:hover {
   height: 100%;
   padding-left: 117px;
   position: fixed;
-  top: 100px;
   right: 0;
   bottom: 0;
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.85;
   z-index: 2;
 }
 #top-nav a {
@@ -865,6 +864,13 @@ a:hover {
 }
 #top-nav ul li {
   padding: 10px 0 10px 0;
+}
+#top-nav #in-nav-trigger {
+  display: block;
+  font-weight: bold;
+  font-size: 30px;
+  float: right;
+  margin: 20px;
 }
 
 .nav-menu {
@@ -880,14 +886,11 @@ label[for="nav-trigger"] {
   display: inline-block;
   cursor: pointer;
   user-select: none;
+  margin-left: 31px;
 }
 
 #menu-label {
   display: none;
-}
-
-label[for="nav-trigger"] {
-  margin-left: 31px;
 }
 
 .nav-trigger:checked ~ #top-nav {
@@ -1791,6 +1794,10 @@ body.files .item-file {
 
   #top-nav {
     width: 468px;
+    top: 108px;
+  }
+  #top-nav #in-nav-trigger {
+    display: none;
   }
 
   #site-title {

@@ -37,6 +37,7 @@
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
     <nav id="top-nav" role="navigation">
+        <label id="in-nav-trigger" for="nav-trigger">X</label>
         <?php echo public_nav_main(); ?>
     </nav>
 

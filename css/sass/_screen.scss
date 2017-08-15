@@ -298,11 +298,10 @@ a {
     height: 100%;
     padding-left: 117px;
     position: fixed;
-    top: 100px;
     right: 0;
     bottom: 0;
     background-color: white;
-    opacity: 0.8;
+    opacity: 0.85;
     z-index: 2;
     a {
         color: $accent-dark;
@@ -313,6 +312,13 @@ a {
         li {
             padding: 10px 0 10px 0;
         }
+    }
+    #in-nav-trigger {
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        float: right;
+        margin: 20px;
     }
 }
 
@@ -330,15 +336,12 @@ label[for="nav-trigger"] {
     display: inline-block;
     cursor: pointer;
     user-select: none;
+    margin-left: 31px;
 }
 
 #menu-label {
     // overridden to show for large screens
     display: none;
-}
-
-label[for="nav-trigger"] {
-    margin-left: 31px;
 }
 
 .nav-trigger:checked ~ #top-nav {
