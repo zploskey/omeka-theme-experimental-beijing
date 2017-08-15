@@ -1905,6 +1905,7 @@ body.files .item-file {
   }
   .exhibits #exhibit-pages ul li {
     display: block;
+    padding: 10px;
     padding-left: 30px;
     text-align: left;
   }
