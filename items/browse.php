@@ -1,5 +1,9 @@
 <?php
-$pageTitle = __('Browse Images');
+if (isset($_GET['query'])) {
+    $pageTitle = __('Browse Items');
+} else {
+    $pageTitle = __('Browse Images');
+}
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
