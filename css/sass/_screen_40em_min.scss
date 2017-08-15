@@ -12,18 +12,18 @@
 /* -------------------------------------------------------------------------*/
 /* Layout */
 
-#wrap {
+.wrap {
     padding: 0 $content-margin;
-}
-
-.jcarousel-wrapper {
-   margin-left: -$content-margin;
 }
 
 header[role="banner"] {
     display: flex;
     align-items: center;
     margin: 0;
+}
+
+#top-nav {
+    width: 468px;
 }
 
 #site-title {
@@ -53,8 +53,8 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 }
 
 .exhibits.summary #primary,
-.exhibits.summary #content > h1:first-of-type,
-.exhibits.show #content > h1:first-of-type,
+.exhibits.summary .content > h1:first-of-type,
+.exhibits.show .content > h1:first-of-type,
 #exhibit-blocks {
     @include span(8 last);
     float: right;

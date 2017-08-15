@@ -40,7 +40,7 @@
         <?php echo public_nav_main(); ?>
     </nav>
 
-    <div id="wrap">
+    <div class="wrap">
         <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
         <header role="banner">
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
@@ -79,6 +79,6 @@
             </div>
         </header>
 
-        <article id="content" role="main" tabindex="-1">
+        <article class="content" role="main" tabindex="-1">
 
             <?php fire_plugin_hook('plugin_content_top', array('view' => $this)); ?>

@@ -467,14 +467,13 @@ template {
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
-#wrap {
+.wrap {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin: 0;
-  overflow: visible;
 }
-#wrap:after {
+.wrap:after {
   content: " ";
   display: block;
   clear: both;
@@ -495,7 +494,7 @@ header[role="banner"] {
   margin-right: 0;
 }
 
-#content {
+.content {
   width: 100%;
   float: left;
   margin-left: 0;
@@ -560,7 +559,6 @@ body {
   line-height: 32px;
   color: #444;
   margin: 0;
-  overflow: none;
 }
 
 .element-set,
@@ -777,6 +775,7 @@ h6 {
 header[role="banner"] {
   min-height: 108px;
   margin-bottom: 10px;
+  z-index: 10;
 }
 header[role="banner"] a {
   color: #333333;
@@ -846,7 +845,7 @@ a:hover {
 
 #top-nav {
   display: none;
-  width: 468px;
+  width: 100%;
   height: 100%;
   padding-left: 117px;
   position: fixed;
@@ -1780,18 +1779,18 @@ body.files .item-file {
   
   /* -------------------------------------------------------------------------*/
   /* Layout */
-  #wrap {
-    padding: 0 9.6528vw;
-  }
-
-  .jcarousel-wrapper {
-    margin-left: -9.6528vw;
+  .wrap {
+    padding: 0 9.6528%;
   }
 
   header[role="banner"] {
     display: flex;
     align-items: center;
     margin: 0;
+  }
+
+  #top-nav {
+    width: 468px;
   }
 
   #site-title {
@@ -1836,8 +1835,8 @@ body.files .item-file {
   }
 
   .exhibits.summary #primary,
-  .exhibits.summary #content > h1:first-of-type,
-  .exhibits.show #content > h1:first-of-type,
+  .exhibits.summary .content > h1:first-of-type,
+  .exhibits.show .content > h1:first-of-type,
   #exhibit-blocks {
     width: 66.26506%;
     float: right;
