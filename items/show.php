@@ -98,7 +98,7 @@ $roles = array_keys($roleMap);
         <div class="element-col-text"></div>
 <?php foreach ($aboutElements as $elementName): ?>
     <?php $canHaveRoles = isset($roleMap[$elementName]); ?>
-    <?php if(isset($elements[$elementName])): ?>
+    <?php if (isset($elements[$elementName])): ?>
         <?php $texts = $elements[$elementName]; ?>
         <div id="<?php echo text_to_id(html_escape("$elementName")); ?>" class="element">
             <?php
@@ -129,10 +129,33 @@ $roles = array_keys($roleMap);
                 </div>
             <?php endforeach; ?>
             </div>
-        </div><!-- end element -->
+        </div>
     <?php endif; ?>
 <?php endforeach; ?>
-
+    <?php if (isset($elements['Chapter'])): ?>
+        <div id="book-reference" class="element">
+            <div class="element-cell element-cell-name">
+                <?php echo __("Book Reference") . ':'; ?>
+            </div>
+            <div class="element-cell">
+                <?php
+                $bookRef = array();
+                $bookRefElements = array('Plate', 'Figure', 'Chapter', 'Page');
+                foreach ($bookRefElements as $elementName) {
+                    if (isset($elements[$elementName])) {
+                        $elementText = $elements[$elementName][0];
+                        $bookRef[] = __($elementName).' #'.$elementText;
+                    }
+                    $bookRefText = implode(', ', $bookRef);
+                }
+                ?>
+                <div class="element-text">
+                    <?php echo $bookRefText; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+        <!-- end element -->
     </div><!-- end about-section -->
 </div><!-- end item-about -->
 
