@@ -179,7 +179,8 @@ $roles = array_keys($roleMap);
         <div class="item-meta">
             <?php if (metadata($work, 'has files')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $work)); ?>
+                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $work),
+                                        array('class'=>'permalink'), 'show', $work); ?>
             </div>
             <?php endif; ?>
 
