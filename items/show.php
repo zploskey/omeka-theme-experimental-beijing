@@ -13,10 +13,12 @@
             )
         ); ?>
         <div id="lightbox">
+            <a id="close-out-of-bounds" href="#_">
             <?php echo files_for_item(
-                array('imageSize' => 'fullsize')
+                array('imageSize' => 'original')
             ); ?>
             <a id="close" href="#_">Close</a>
+            </a>
         </div>
         <?php endif; ?>
 
