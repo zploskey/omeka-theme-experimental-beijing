@@ -1,6 +1,10 @@
 <?php echo head(array('title' => metadata('exhibit', 'title'), 'bodyclass'=>'exhibits summary')); ?>
 
-<h1><?php echo metadata('exhibit', 'title'); ?></h1>
+<div id="exhibit-titleblock">
+    <h3><?php echo __(get_theme_option('exhibits_bookpart')); ?></h3>
+    <h1><?php echo metadata('exhibit', 'title'); ?></h1>
+</div>
+
 <?php echo exhibit_builder_page_nav(); ?>
 
 <?php
@@ -14,7 +18,7 @@ if ($pageTree):
     $link = exhibit_builder_link_to_exhibit($exhibit, null,
                                             array('class' => 'active')
     );
-    $pageTree = preg_replace('/^<ul><li/', "<ul><li>$link</li><li", $pageTree, 1);
+    $pageTree = preg_replace('/^<ul><li/', "<ul><li class=\"current\">$link</li><li", $pageTree, 1);
     echo $pageTree;
     ?>
 </nav>

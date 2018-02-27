@@ -57,17 +57,11 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 }
 
 .exhibits.summary #primary,
-.exhibits.summary .content > h1:first-of-type,
-.exhibits.show .content > h1:first-of-type,
+.exhibits.show #exhibit-titleblock,
+.exhibits.summary #exhibit-titleblock,
 #exhibit-blocks {
     @include span(8 last);
     float: right;
-}
-
-
-.full ~ #exhibit-blocks,
-.full ~ #exhibit-page-navigation {
-    width: 100%;
 }
 
 .item.hentry {
@@ -122,6 +116,13 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 /* -------------------------------------------------------------------------*/
 /* Exhibits */
 
+/* TODO: check font sizes against design
+.exhibits.show #exhibit-titleblock,
+.exhibits.summary #exhibit-titleblock {
+    h1 {}
+    h3 {}
+}*/
+
 .exhibits #exhibit-pages {
     display: block;
     height: 100%;
@@ -134,19 +135,20 @@ div#contribution-type-form div.inputs {@include span(last 3);}
             padding: 10px;
             padding-left: 30px;
             text-align: left;
+            border: none;
             a {
                 background: transparent;
-                display: block;
-                border: none;
             }
         }
         li:first-of-type {
             padding-left: 0;
         }
     }
-    li.current a,
-    a.active {
+    li.current {
         background: transparent;
+        a {
+            color: $active-color;
+        }
     }
 }
 

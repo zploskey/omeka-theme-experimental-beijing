@@ -737,39 +737,23 @@ h1, h2, #item-filters .collection, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   font-weight: normal;
   line-height: 48px;
-  padding: .5em 0;
   margin: 0;
   color: #555;
 }
 
-h4, h5, h6 {
-  font-style: 22.5px;
-  line-height: 36px;
-}
-
-h5, h6 {
-  font-weight: bold;
-}
-
 h1 {
   font-size: 48px;
-  line-height: 76.8px;
-  clear: both;
-  word-wrap: break-word;
+  line-height: 60px;
 }
 
 h2, #item-filters .collection {
   font-size: 35px;
-  line-height: 48px;
+  line-height: 54px;
 }
 
 h3 {
   font-size: 25px;
   line-height: 40px;
-}
-
-h6 {
-  font-size: italic;
 }
 
 header[role="banner"] {
@@ -1544,13 +1528,14 @@ body.files .item-file {
 
 /* -------------------------------------------------------------------------*/
 /* Exhibits */
-#exhibit-pages:not(.full) {
+#exhibit-pages {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
-#exhibit-pages:not(.full) ul {
+#exhibit-pages ul {
   height: 100%;
   width: 100%;
   display: table;
@@ -1558,115 +1543,38 @@ body.files .item-file {
   padding: 0;
   list-style-type: none;
 }
-#exhibit-pages:not(.full) ul li {
+#exhibit-pages ul li {
   height: 100%;
   display: table-cell;
   text-align: center;
   vertical-align: top;
-}
-#exhibit-pages:not(.full) ul li a {
-  padding: 10px;
-  height: 100%;
-  display: block;
   border: 1px solid #cccccc;
-  color: #555;
-  overflow: auto;
+  border-left: 0;
+  white-space: normal;
 }
-#exhibit-pages:not(.full) ul li a:hover {
+#exhibit-pages ul li a {
+  color: #555;
+}
+#exhibit-pages ul li a:hover {
   text-decoration: none;
 }
-#exhibit-pages:not(.full) ul li ul a:before {
+#exhibit-pages ul li ul a:before {
   content: "\2014\0020";
 }
-#exhibit-pages:not(.full) li.current a,
-#exhibit-pages:not(.full) a.active {
+#exhibit-pages ul li.current {
   background: #cccccc;
+}
+#exhibit-pages ul li.current a {
+  color: #CC0000;
+}
+#exhibit-pages li.current a,
+#exhibit-pages a.active {
   color: #CC0000;
 }
 
 .exhibit .description p:first-of-type,
 .collection .collection-description p:first-of-type {
   margin-top: 0;
-}
-
-#exhibit-pages.full {
-  border-color: #555;
-}
-#exhibit-pages.full ul {
-  margin: 1em 0 0 0;
-  list-style-type: none;
-}
-#exhibit-pages.full ul li {
-  display: block;
-}
-#exhibit-pages.full ul li a {
-  display: block;
-}
-#exhibit-pages.full ul li a:hover {
-  text-decoration: none;
-}
-#exhibit-pages.full ul li ul {
-  margin-left: 2em;
-}
-#exhibit-pages.full .current-page {
-  display: block;
-  background-color: #cccccc;
-  padding: .5em;
-  color: white;
-}
-#exhibit-pages.full #secondary-nav {
-  overflow: hidden;
-}
-#exhibit-pages.full #secondary-nav li {
-  border: none;
-  margin: 0 .5em .5em 0;
-}
-#exhibit-pages.full #secondary-nav ul {
-  width: 100%;
-  float: left;
-  margin: 0;
-}
-#exhibit-pages.full #secondary-nav ul .current a {
-  color: white;
-}
-#exhibit-pages.full #secondary-nav ul li {
-  padding: 0;
-  display: block;
-  float: left;
-}
-#exhibit-pages.full #secondary-nav ul li a {
-  border: 0;
-  padding: 0;
-  margin-bottom: 0;
-}
-#exhibit-pages.full #secondary-nav ul li a:hover {
-  color: #cccccc;
-  text-decoration: none;
-}
-#exhibit-pages.full #secondary-nav > li:nth-child(2) {
-  display: block;
-}
-#exhibit-pages.full #secondary-nav > li:nth-child(3) {
-  display: block;
-  clear: both;
-}
-#exhibit-pages.full #secondary-nav > li:nth-child(3) a:before {
-  content: "\2014\0020";
-}
-#exhibit-pages.full #secondary-nav > li:nth-child(4) {
-  display: block;
-  clear: left;
-}
-#exhibit-pages.full #secondary-nav > li:nth-child(4) a:before {
-  content: "\2014\0020";
-}
-#exhibit-pages.full #secondary-nav .exhibit-title {
-  font-family: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-  text-transform: uppercase;
-  padding: .5em 0;
-}
-#exhibit-pages.full #secondary-nav .exhibit-title:after {
-  content: ":";
 }
 
 #exhibit-child-pages {
@@ -1851,16 +1759,11 @@ body.files .item-file {
   }
 
   .exhibits.summary #primary,
-  .exhibits.summary .content > h1:first-of-type,
-  .exhibits.show .content > h1:first-of-type,
+  .exhibits.show #exhibit-titleblock,
+  .exhibits.summary #exhibit-titleblock,
   #exhibit-blocks {
     width: 66.26506%;
     float: right;
-  }
-
-  .full ~ #exhibit-blocks,
-  .full ~ #exhibit-page-navigation {
-    width: 100%;
   }
 
   .item.hentry {
@@ -1903,6 +1806,12 @@ body.files .item-file {
   /* Navigation */
   /* -------------------------------------------------------------------------*/
   /* Exhibits */
+  /* TODO: check font sizes against design
+  .exhibits.show #exhibit-titleblock,
+  .exhibits.summary #exhibit-titleblock {
+      h1 {}
+      h3 {}
+  }*/
   .exhibits #exhibit-pages {
     display: block;
     height: 100%;
@@ -1917,18 +1826,19 @@ body.files .item-file {
     padding: 10px;
     padding-left: 30px;
     text-align: left;
+    border: none;
   }
   .exhibits #exhibit-pages ul li a {
     background: transparent;
-    display: block;
-    border: none;
   }
   .exhibits #exhibit-pages ul li:first-of-type {
     padding-left: 0;
   }
-  .exhibits #exhibit-pages li.current a,
-  .exhibits #exhibit-pages a.active {
+  .exhibits #exhibit-pages li.current {
     background: transparent;
+  }
+  .exhibits #exhibit-pages li.current a {
+    color: #CC0000;
   }
 
   .exhibits.show #secondary-nav.exhibit-page-nav li {
