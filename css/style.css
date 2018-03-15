@@ -1113,7 +1113,7 @@ button:hover,
 #search-container input[type=text] {
   margin: 0;
   width: 100px;
-  font-size: 25px;
+  font-size: 16px;
 }
 #search-container .show-advanced,
 #search-container button {
