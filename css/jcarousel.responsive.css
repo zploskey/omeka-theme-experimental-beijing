@@ -57,6 +57,7 @@ p.shortcode-carousel-title {
 
 .jcarousel-control-prev,
 .jcarousel-control-next {
+    display: none;
     position: absolute;
     top: 50%;
     margin-top: -15px;
