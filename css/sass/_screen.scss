@@ -191,6 +191,11 @@ footer {
     padding: 0.5em 0;
 }
 
+ul {
+    // prevent extra top and bottom margins
+    margin: 0;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Headings */
 
@@ -279,12 +284,8 @@ a {
 #top-nav {
     display: none;
     width: 100%;
-    height: 100%;
-    padding-left: 117px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    background-color: white;
+    position: relative;
+    float: right;
     opacity: 0.85;
     z-index: 2;
     a {
@@ -292,20 +293,17 @@ a {
         text-decoration: none;
     }
     ul {
+        padding-left: 117px;
+        padding-right: 117px;
+        background-color: white;
+        position: absolute;
+        right: 0;
         list-style-type: none;
         li {
             padding: 10px 0 10px 0;
         }
     }
-    #in-nav-trigger {
-        display: block;
-        font-weight: bold;
-        font-size: 30px;
-        float: right;
-        margin: 20px;
-    }
 }
-
 
 .nav-menu {
     font-weight: bold;
@@ -318,9 +316,8 @@ a {
 
 label[for="nav-trigger"] {
     display: inline-block;
-    cursor: pointer;
-    user-select: none;
     margin-left: 31px;
+    @include noselect;
 }
 
 #menu-label {

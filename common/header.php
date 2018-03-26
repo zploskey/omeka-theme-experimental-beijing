@@ -35,11 +35,6 @@
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-    <nav id="top-nav" role="navigation">
-        <label id="in-nav-trigger" for="nav-trigger">X</label>
-        <?php echo public_nav_main(); ?>
-    </nav>
 
     <div class="wrap">
         <?php fire_plugin_hook('public_body', array('view' => $this)); ?>
@@ -76,9 +71,14 @@
                     </a>
                 </div>
 
-                <label for="nav-trigger"><span id="menu-label"><?php echo __('Menu');?></span> &#9776;</label>
+                <label for="nav-trigger"><span id="menu-label" aria-label="Menu"><?php echo __('Menu');?></span> &#9776;</label>
             </div>
         </header>
+
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <nav id="top-nav" role="navigation">
+            <?php echo public_nav_main(); ?>
+        </nav>
 
         <article class="content" role="main" tabindex="-1">
 

@@ -731,6 +731,10 @@ footer {
   padding: 0.5em 0;
 }
 
+ul {
+  margin: 0;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Headings */
 h1, h2, #item-filters .collection, h3, h4, h5, h6 {
@@ -830,12 +834,8 @@ a:hover {
 #top-nav {
   display: none;
   width: 100%;
-  height: 100%;
-  padding-left: 117px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  background-color: white;
+  position: relative;
+  float: right;
   opacity: 0.85;
   z-index: 2;
 }
@@ -844,17 +844,15 @@ a:hover {
   text-decoration: none;
 }
 #top-nav ul {
+  padding-left: 117px;
+  padding-right: 117px;
+  background-color: white;
+  position: absolute;
+  right: 0;
   list-style-type: none;
 }
 #top-nav ul li {
   padding: 10px 0 10px 0;
-}
-#top-nav #in-nav-trigger {
-  display: block;
-  font-weight: bold;
-  font-size: 30px;
-  float: right;
-  margin: 20px;
 }
 
 .nav-menu {
@@ -868,9 +866,14 @@ a:hover {
 
 label[for="nav-trigger"] {
   display: inline-block;
-  cursor: pointer;
-  user-select: none;
   margin-left: 31px;
+  cursor: default;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 #menu-label {
@@ -1707,14 +1710,6 @@ body.files .item-file {
     display: flex;
     align-items: center;
     margin: 0;
-  }
-
-  #top-nav {
-    width: 468px;
-    top: 108px;
-  }
-  #top-nav #in-nav-trigger {
-    display: none;
   }
 
   #site-title {
