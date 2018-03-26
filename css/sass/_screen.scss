@@ -196,6 +196,11 @@ ul {
     margin: 0;
 }
 
+*:focus {
+    // Don't outline things anything when focused by default
+    outline: 0;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Headings */
 
