@@ -55,6 +55,11 @@ body {
     margin: 0;
 }
 
+article {
+    // Don't outline the article when clicked/focused by default
+    outline: 0;
+}
+
 .element-set,
 .item,
 .element,
@@ -194,11 +199,6 @@ footer {
 ul {
     // prevent extra top and bottom margins
     margin: 0;
-}
-
-*:focus {
-    // Don't outline things anything when focused by default
-    outline: 0;
 }
 
 /* -------------------------------------------------------------------------*/

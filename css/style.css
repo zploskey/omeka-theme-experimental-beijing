@@ -561,6 +561,10 @@ body {
   margin: 0;
 }
 
+article {
+  outline: 0;
+}
+
 .element-set,
 .item,
 .element,
@@ -733,10 +737,6 @@ footer {
 
 ul {
   margin: 0;
-}
-
-*:focus {
-  outline: 0;
 }
 
 /* -------------------------------------------------------------------------*/
