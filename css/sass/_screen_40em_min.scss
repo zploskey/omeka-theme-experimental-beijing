@@ -70,8 +70,11 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 
 #item-top {
     #item-top-media {
-        max-width: 600px;
-        margin-right: 50px;
+        @include span(6);
+    }
+    .placard {
+        padding-left: 50px;
+        @include span(6 last);
     }
 }
 

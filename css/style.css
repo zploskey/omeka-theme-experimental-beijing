@@ -1304,8 +1304,11 @@ th {
   cursor: zoom-in;
 }
 #item-top .placard {
-  max-width: 400px;
   word-wrap: break-word;
+}
+#item-top .placard h1 {
+  font-size: 40px;
+  line-height: 48px;
 }
 #item-top #lightbox {
   display: none;
@@ -1777,8 +1780,12 @@ body.files .item-file {
   }
 
   #item-top #item-top-media {
-    max-width: 600px;
-    margin-right: 50px;
+    width: 49.39759%;
+    float: left;
+  }
+  #item-top .placard {
+    padding-left: 50px;
+    width: 49.39759%;
   }
 
   #menu-label {

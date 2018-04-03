@@ -40,9 +40,9 @@
     </div>
 
     <div class="placard">
-        <h1>
-        <?php echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true)); ?>
-        </h1>
+        <h1><?php
+            echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true));
+        ?></h1>
     <?php
     $creators = array_unique(metadata('item', array('Dublin Core', 'Creator'), 'all'));
     foreach($creators as $creator): ?>

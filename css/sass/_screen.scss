@@ -695,8 +695,11 @@ th {
         cursor: zoom-in;
     }
     .placard {
-        max-width: 400px;
         word-wrap: break-word;
+        h1 {
+            font-size: 40px;
+            line-height: 48px;
+        }
     }
     #lightbox {
         a#close-out-of-bounds {
