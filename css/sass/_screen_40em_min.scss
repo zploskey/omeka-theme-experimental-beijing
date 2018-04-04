@@ -48,6 +48,46 @@ div#contribution-type-form div.inputs {@include span(last 3);}
     @include span(4);
 }
 
+.chapters {
+    .part {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+        .title {
+            @include span(6);
+            text-align: right;
+            .part-title {
+                font-size: 30px;
+                line-height: 45px;
+            }
+            .part-subtitle {
+                font-size: 40px;
+                line-height: 55px;
+                margin: 0;
+            }
+        }
+        ul.only {
+            margin-left: span(6);
+        }
+        ul {
+            @include span(6 last);
+            @include clearfix;
+            .chapter-number {
+                padding-top: 10px;
+                font-size: 23px;
+                line-height: 35px;
+            }
+            .chapter-name {
+                font-size: 30px;
+                line-height: 45px;
+                padding-bottom: 10px;
+                margin: 0;
+            }
+            margin: 0;
+        }
+    }
+}
+
 .exhibits.summary #primary,
 .exhibits.show #exhibit-titleblock,
 .exhibits.summary #exhibit-titleblock,

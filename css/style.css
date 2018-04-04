@@ -472,6 +472,7 @@ template {
   margin-left: auto;
   margin-right: auto;
   margin: 0;
+  padding: 0 1%;
 }
 .wrap:after {
   content: " ";
@@ -702,27 +703,24 @@ blockquote {
   font-size: 33px;
 }
 
-.chapters {
-  list-style: none;
-}
-.chapters .part-title {
+.chapters .part .title .part-title {
   font-size: 24px;
   font-weight: light;
 }
-.chapters .part-subtitle {
+.chapters .part .title .part-subtitle {
   color: black;
   font-size: 28px;
   margin-bottom: 40px;
 }
-.chapters ul {
+.chapters .part ul {
   list-style: none;
   margin-bottom: 40px;
 }
-.chapters ul .chapter-number {
+.chapters .part ul .chapter-number {
   font-size: 16px;
   font-weight: light;
 }
-.chapters ul .chapter-name {
+.chapters .part ul .chapter-name {
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -1758,6 +1756,46 @@ body.files .item-file {
   .exhibits #exhibit-pages {
     width: 32.53012%;
     float: left;
+  }
+
+  .chapters .part {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .chapters .part .title {
+    width: 49.39759%;
+    float: left;
+    text-align: right;
+  }
+  .chapters .part .title .part-title {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .chapters .part .title .part-subtitle {
+    font-size: 40px;
+    line-height: 55px;
+    margin: 0;
+  }
+  .chapters .part ul.only {
+    margin-left: 49.39759%;
+  }
+  .chapters .part ul {
+    width: 49.39759%;
+    overflow: hidden;
+    *zoom: 1;
+    margin: 0;
+  }
+  .chapters .part ul .chapter-number {
+    padding-top: 10px;
+    font-size: 23px;
+    line-height: 35px;
+  }
+  .chapters .part ul .chapter-name {
+    font-size: 30px;
+    line-height: 45px;
+    padding-bottom: 10px;
+    margin: 0;
   }
 
   .exhibits.summary #primary,
