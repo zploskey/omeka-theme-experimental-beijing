@@ -1625,6 +1625,12 @@ body.files .item-file {
   margin-left: 5%;
 }
 
+/* overlay and markers used in Exhibit image galleries are hidden by default. */
+.exhibits .overlay,
+.exhibits .marker {
+  display: none;
+}
+
 .exhibit-gallery-item {
   position: relative;
 }
@@ -1643,6 +1649,7 @@ body.files .item-file {
   display: block;
 }
 .exhibit-gallery-item .marker {
+  display: block;
   position: absolute;
   font-size: 30px;
   line-height: 26px;

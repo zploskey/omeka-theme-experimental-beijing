@@ -1008,6 +1008,14 @@ body.files .item-file {
     }
 }
 
+/* overlay and markers used in Exhibit image galleries are hidden by default. */
+.exhibits {
+    .overlay,
+    .marker {
+        display: none;
+    }
+}
+
 .exhibit-gallery-item {
     position: relative;
     .overlay {
@@ -1025,6 +1033,7 @@ body.files .item-file {
         display: block;
     }
     .marker {
+        display: block;
         position: absolute;
         font-size: 30px;
         line-height: 26px;
@@ -1041,7 +1050,6 @@ body.files .item-file {
     a:hover .marker {
         display: none;
     }
-
 }
 
 #keywords-section {
