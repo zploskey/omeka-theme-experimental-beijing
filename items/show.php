@@ -142,11 +142,15 @@ $roles = array_keys($roleMap);
             <div class="element-cell">
                 <?php
                 $bookRef = array();
-                $bookRefElements = array('Plate', 'Figure', 'Chapter', 'Page');
+                $bookRefElements = array('Chapter', 'Plate', 'Figure', 'Page');
                 foreach ($bookRefElements as $elementName) {
                     if (isset($elements[$elementName])) {
                         $elementText = $elements[$elementName][0];
-                        $bookRef[] = __($elementName).' #'.$elementText;
+                        if ($elementName === 'Chapter') {
+                            $bookRef[] = $elementText;
+                        } else {
+                            $bookRef[] = __($elementName) . " $elementText";
+                        }
                     }
                     $bookRefText = implode(', ', $bookRef);
                 }
