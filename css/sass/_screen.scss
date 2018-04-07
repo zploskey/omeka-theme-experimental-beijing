@@ -1008,6 +1008,42 @@ body.files .item-file {
     }
 }
 
+.exhibit-gallery-item {
+    position: relative;
+    .overlay {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 20%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5);
+        color: black;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    a:hover .overlay {
+        display: block;
+    }
+    .marker {
+        position: absolute;
+        font-size: 30px;
+        line-height: 26px;
+        top: 0;
+        left: 10px;
+        color: black;
+        -webkit-text-stroke: 1px darkgray;
+        text-stroke: 1px darkgray;
+    }
+    .marker:before {
+        font-family: "FontAwesome";
+        content: "";
+    }
+    a:hover .marker {
+        display: none;
+    }
+
+}
+
 #keywords-section {
     display: none;
 }

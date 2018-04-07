@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* -------------------------------------------------------------------------*/
 /* Imports */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -1622,6 +1623,41 @@ body.files .item-file {
 }
 .exhibit-block .exhibit-items.right {
   margin-left: 5%;
+}
+
+.exhibit-gallery-item {
+  position: relative;
+}
+.exhibit-gallery-item .overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-size: 12px;
+  line-height: 20px;
+}
+.exhibit-gallery-item a:hover .overlay {
+  display: block;
+}
+.exhibit-gallery-item .marker {
+  position: absolute;
+  font-size: 30px;
+  line-height: 26px;
+  top: 0;
+  left: 10px;
+  color: black;
+  -webkit-text-stroke: 1px darkgray;
+  text-stroke: 1px darkgray;
+}
+.exhibit-gallery-item .marker:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+.exhibit-gallery-item a:hover .marker {
+  display: none;
 }
 
 #keywords-section {
