@@ -1058,7 +1058,16 @@ body.files .item-file {
 }
 
 #item-tags {
-    font-size: 21px;
+    .element-text {
+        font-size: 20px;
+        a {
+            display: inline-block;
+            background-color: $accent-light;
+            border-radius: 4px;
+            padding: 24px;
+            margin: 5px;
+        }
+    }
 }
 
 #about-section,

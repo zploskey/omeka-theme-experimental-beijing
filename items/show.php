@@ -191,13 +191,7 @@ $roles = array_keys($roleMap);
     <div id="keywords-section">
         <div id="item-tags" class="element">
             <div class="element-text">
-                <?php
-                if (function_exists('locale_filtered_tag_string')) {
-                    echo locale_filtered_tag_string('item');
-                } else {
-                    echo tag_string('item');
-                }
-                ?>
+                <?php echo ebj_tags() . "\n"; ?>
             </div>
         </div>
     </div>

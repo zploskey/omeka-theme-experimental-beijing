@@ -1672,8 +1672,15 @@ body.files .item-file {
   display: none;
 }
 
-#item-tags {
-  font-size: 21px;
+#item-tags .element-text {
+  font-size: 20px;
+}
+#item-tags .element-text a {
+  display: inline-block;
+  background-color: #cccccc;
+  border-radius: 4px;
+  padding: 24px;
+  margin: 5px;
 }
 
 #about-section,
