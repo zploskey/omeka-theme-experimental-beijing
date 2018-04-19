@@ -572,7 +572,8 @@ article {
 .element,
 .collection,
 .exhibit,
-.hTagcloud {
+.hTagcloud,
+#item-top {
   padding: 1em 0;
   overflow: hidden;
   clear: both;
@@ -1723,6 +1724,13 @@ body.files .item-file {
   text-decoration: none;
 }
 
+#item-about.person {
+  border: 0;
+}
+#item-about.person .section-toggle {
+  display: none;
+}
+
 #item-more-info {
   border-bottom: 1px solid #555;
 }
@@ -1865,6 +1873,12 @@ body.files .item-file {
     float: left;
   }
   #item-top .placard {
+    padding-left: 50px;
+    width: 49.39759%;
+  }
+
+  #item-about.person {
+    display: inline-block;
     padding-left: 50px;
     width: 49.39759%;
   }

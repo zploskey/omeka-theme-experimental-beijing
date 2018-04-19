@@ -113,9 +113,16 @@ div#contribution-type-form div.inputs {@include span(last 3);}
         @include span(6);
     }
     .placard {
+        // keep synced with person about below
         padding-left: 50px;
         @include span(6 last);
     }
+}
+
+#item-about.person {
+    display: inline-block;
+    padding-left: 50px;
+    @include span(6 last);
 }
 
 #menu-label {
