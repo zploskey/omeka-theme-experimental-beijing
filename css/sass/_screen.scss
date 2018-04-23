@@ -37,6 +37,7 @@
 header[role="banner"] {@include span(12);}
 .content {@include span(12);}
 .pagination-nav {@include span(12);}
+.sort-and-nav {@include span(12);}
 #item-filters {@include span(12);}
 #sort-links {@include span(12);}
 #outputs {@include span(12)}
@@ -352,6 +353,9 @@ label[for="nav-trigger"] {
         margin: 0;
         padding: 0;
         list-style-type: none;
+        a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -383,21 +387,16 @@ label[for="nav-trigger"] {
     li {
         margin-right: 10px;
         display: block;
-        float: left;
         font-weight: bold;
+        font-size: 20px;
+        a {
+            color: $accent-med;
+            font-weight: normal;
+        }
         &.active a {
-            font-weight: bold;
             color: $active-color;
         }
     }
-}
-
-.browse,
-.tags,
-.items {
-    .secondary-nav li, #secondary-nav li {
-        @include line-button;
-  }
 }
 
 .pagination {
@@ -444,19 +443,22 @@ label[for="nav-trigger"] {
 #sort-links {
     margin:0 0 1em 0;
     .sort-label {
-        float:left;
+        font-weight: bold;
+        display: block;
     }
     #sort-links-list {
         overflow: auto;
-        padding-left:10px;
+        margin-left: 30px;
     }
     li {
-        float:left;
+        font-size: 20px;
         margin-right:10px;
-        @include line-button;
+        a {
+            color: $accent-med;
+        }
         &.sorting a {
-            text-decoration: underline;
             font-weight: bold;
+            color: $active-color;
         }
     }
 }

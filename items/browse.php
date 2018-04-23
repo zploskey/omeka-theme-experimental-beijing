@@ -9,10 +9,6 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 
 <h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
 
-<nav class="items-nav navigation secondary-nav">
-    <?php echo public_nav_items(); ?>
-</nav>
-
 <?php echo item_search_filters(); ?>
 
 <?php echo pagination_links(); ?>
@@ -23,10 +19,14 @@ $sortLinks[__('Title')] = 'Dublin Core,Title';
 $sortLinks[__('Creator')] = 'Dublin Core,Creator';
 $sortLinks[__('Date Created')] = 'Dublin Core,Date Created'; ?>
 
-<div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+<div class="sort-and-nav">
+    <div id="sort-links">
+        <span class="sort-label"><?php echo __('Sort by'); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    </div>
+    <nav class="items-nav navigation secondary-nav">
+        <?php echo public_nav_items(); ?>
+    </nav>
 </div>
-
 
 <?php endif; ?>
 

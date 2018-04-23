@@ -44,6 +44,10 @@ header[role="banner"] {
 .field .inputs,
 div#contribution-type-form div.inputs {@include span(last 3);}
 
+// items browse page container for sort-links and secondary-nav
+.sort-and-nav {@include span(3);}
+.browse .items-list {@include span(9);}
+
 .exhibits #exhibit-pages {
     @include span(4);
 }
@@ -100,6 +104,7 @@ div#contribution-type-form div.inputs {@include span(last 3);}
     width: 329px;
     padding: 8px;
 }
+
 
 /* -------------------------------------------------------------------------*/
 /* General */

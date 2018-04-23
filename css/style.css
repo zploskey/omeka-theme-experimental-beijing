@@ -510,6 +510,13 @@ header[role="banner"] {
   margin-right: 0;
 }
 
+.sort-and-nav {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 #item-filters {
   width: 100%;
   float: left;
@@ -905,6 +912,10 @@ label[for="nav-trigger"] {
   padding: 0;
   list-style-type: none;
 }
+.navigation ul a,
+#sort-links ul a {
+  text-decoration: none;
+}
 
 .navigation #sort-links {
   font-size: 20px;
@@ -936,21 +947,17 @@ label[for="nav-trigger"] {
 #secondary-nav li {
   margin-right: 10px;
   display: block;
-  float: left;
   font-weight: bold;
+  font-size: 20px;
+}
+.secondary-nav li a,
+#secondary-nav li a {
+  color: #7c7c7c;
+  font-weight: normal;
 }
 .secondary-nav li.active a,
 #secondary-nav li.active a {
-  font-weight: bold;
   color: #CC0000;
-}
-
-.browse .secondary-nav li:before, .browse #secondary-nav li:before,
-.tags .secondary-nav li:before,
-.tags #secondary-nav li:before,
-.items .secondary-nav li:before,
-.items #secondary-nav li:before {
-  content: "\2014\0020";
 }
 
 .pagination {
@@ -1052,22 +1059,23 @@ label[for="nav-trigger"] {
   margin: 0 0 1em 0;
 }
 #sort-links .sort-label {
-  float: left;
+  font-weight: bold;
+  display: block;
 }
 #sort-links #sort-links-list {
   overflow: auto;
-  padding-left: 10px;
+  margin-left: 30px;
 }
 #sort-links li {
-  float: left;
+  font-size: 20px;
   margin-right: 10px;
 }
-#sort-links li:before {
-  content: "\2014\0020";
+#sort-links li a {
+  color: #7c7c7c;
 }
 #sort-links li.sorting a {
-  text-decoration: underline;
   font-weight: bold;
+  color: #CC0000;
 }
 
 select {
@@ -1809,6 +1817,16 @@ body.files .item-file {
   .field .inputs,
   div#contribution-type-form div.inputs {
     width: 24.09639%;
+  }
+
+  .sort-and-nav {
+    width: 24.09639%;
+    float: left;
+  }
+
+  .browse .items-list {
+    width: 74.6988%;
+    float: left;
   }
 
   .exhibits #exhibit-pages {
