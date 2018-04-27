@@ -203,7 +203,7 @@ $roles = array_keys($roleMap);
 
 <?php endif;?>
 
-<?php if (isset($this->series)): ?>
+<?php if (isset($this->series) AND $this->series): ?>
 
 <div id="item-series" class="element-set">
 <a href="#series-section" class="section-toggle">
