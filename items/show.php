@@ -203,6 +203,43 @@ $roles = array_keys($roleMap);
 
 <?php endif;?>
 
+<?php if (isset($this->series)): ?>
+
+<div id="item-series" class="element-set">
+<a href="#series-section" class="section-toggle">
+    <h2><?php echo __('Series'); ?><span id="expand-symbol">-</span></h2>
+</a>
+</div>
+<div id="series-section" class="items-list">
+<?php foreach ($this->series as $name => $series): ?>
+    <div class="series-name"><?php echo $name; ?></div>
+    <?php foreach ($series as $work): ?>
+    <div class="item hentry">
+        <div class="item-meta">
+            <?php if (metadata($work, 'has files')): ?>
+            <div class="item-img">
+                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $work),
+                                        array('class'=>'permalink'), 'show', $work); ?>
+            </div>
+            <?php endif; ?>
+
+            <h3><?php echo link_to_item(
+                metadata($work, array('Dublin Core', 'Title')),
+                array('class'=>'permalink'), 'show', $work); ?></h3>
+
+            <?php if ($date_created = metadata($work, array('Dublin Core', 'Date Created'))): ?>
+            <div class="item-date-created">
+                <?php echo $date_created; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php endforeach; ?>
+<?php endforeach; ?>
+</div>
+
+<?php endif; ?>
+
 <?php if (isset($this->works)): ?>
 
 <div id="item-works" class="element-set">

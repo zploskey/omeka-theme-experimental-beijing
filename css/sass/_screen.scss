@@ -1103,6 +1103,7 @@ body.files .item-file {
 
 #item-about,
 #item-keywords,
+#item-series,
 #item-works,
 #item-more-info {
     border-top: 1px solid $grey-medium;
@@ -1124,4 +1125,17 @@ body.files .item-file {
 
 #expand-symbol {
     float: right;
+}
+
+#series-section {
+    .series-name {
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+#series-section,
+#works-section {
+    margin-left: 20px;
 }

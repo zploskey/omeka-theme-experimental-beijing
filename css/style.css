@@ -1725,12 +1725,14 @@ body.files .item-file {
 
 #item-about,
 #item-keywords,
+#item-series,
 #item-works,
 #item-more-info {
   border-top: 1px solid #555;
 }
 #item-about a,
 #item-keywords a,
+#item-series a,
 #item-works a,
 #item-more-info a {
   text-decoration: none;
@@ -1749,6 +1751,17 @@ body.files .item-file {
 
 #expand-symbol {
   float: right;
+}
+
+#series-section .series-name {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#series-section,
+#works-section {
+  margin-left: 20px;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -1981,6 +1994,10 @@ body.files .item-file {
   }
   .exhibits.show #exhibit-page-navigation #exhibit-nav-up .current-page {
     clear: none;
+  }
+
+  #series-section .series-name {
+    font-size: 25px;
   }
 }
 /* -------------------------------------------------------------------------*/
