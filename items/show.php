@@ -2,12 +2,14 @@
 
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
-<div id="item-top">
+<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+
 <?php if ($isPerson): ?>
     <h1><?php
         echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true));
     ?></h1>
 <?php endif; ?>
+<div id="item-top">
     <div id="item-top-media">
         <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
         <?php echo files_for_item(
@@ -59,10 +61,8 @@
     <?php endforeach; ?>
         <h3><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h3>
     </div>
-<?php endif; ?>
 </div>
-
-<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+<?php endif; ?>
 
 <?php
 $elementSets = all_element_texts('item', array('return_type' => 'array'));
@@ -178,6 +178,10 @@ $roles = array_keys($roleMap);
     <?php endif; ?>
     </div>
 </div>
+
+<?php if ($isPerson): // close the item-top div ?>
+</div>
+<?php endif; ?>
 
 <?php if (metadata('item', 'has tags')): ?>
 
