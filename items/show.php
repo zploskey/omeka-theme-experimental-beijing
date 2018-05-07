@@ -11,16 +11,24 @@
 <?php endif; ?>
 <div id="item-top">
     <div id="item-top-media">
-        <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-        <?php echo files_for_item(
-            array(
-                'imageSize' => 'fullsize',
-                'linkAttributes' => array(
-                    'class' => 'lightbox-link',
-                    'href' => '#lightbox',
+        <?php
+        if ($embed = metadata('item', array('Item Type Metadata', 'Embed'))):
+            $embed = preg_replace('|(<iframe .*)(></iframe>)|',
+                                  '\1 allowfullscreen mozallowfullscreen webkitallowfullscreen\2',
+                                  $embed, 1);
+            echo $embed;
+        elseif ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')):
+            echo files_for_item(
+                array(
+                    'imageSize' => 'fullsize',
+                    'linkAttributes' => array(
+                        'class' => 'lightbox-link',
+                        'href' => '#lightbox',
+                    )
                 )
-            )
-        ); ?>
+            );
+        ?>
+
         <div id="lightbox">
             <a id="close-out-of-bounds" href="#_">
             <?php echo files_for_item(
@@ -38,27 +46,17 @@
             <div class="element-text"><?php echo files_for_item(); ?></div>
         </div>
         <?php endif; ?>
-
-        <?php
-        $embed = metadata('item', array('Item Type Metadata', 'Embed'));
-        $embed = preg_replace('|(<iframe .*)(></iframe>)|',
-                              '\1 allowfullscreen mozallowfullscreen webkitallowfullscreen\2',
-                              $embed, 1);
-        echo $embed;
-        ?>
     </div>
 
 <?php if (!$isPerson): ?>
     <div class="placard">
-        <h1>
-            <?php echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true)); ?>
-        </h1>
-    <?php
-    $creators = array_unique(metadata('item', array('Dublin Core', 'Creator'), 'all'));
-    foreach($creators as $creator):
-    ?>
+        <h1><?php echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true)); ?></h1>
+<?php
+$creators = array_unique(metadata('item', array('Dublin Core', 'Creator'), 'all'));
+foreach($creators as $creator):
+?>
         <h3><?php echo $creator; ?></h3>
-    <?php endforeach; ?>
+<?php endforeach; ?>
         <h3><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h3>
     </div>
 </div>
