@@ -1669,6 +1669,13 @@ body.files .item-file {
   font-family: "FontAwesome";
   content: "";
 }
+.exhibit-gallery-item .video.marker {
+  top: 4px;
+}
+.exhibit-gallery-item .video.marker:before {
+  font-family: "FontAwesome";
+  content: "\f1c8";
+}
 .exhibit-gallery-item a:hover .marker {
   display: none;
 }

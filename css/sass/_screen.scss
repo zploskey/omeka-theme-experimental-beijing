@@ -1049,6 +1049,13 @@ body.files .item-file {
         font-family: "FontAwesome";
         content: "";
     }
+    .video.marker {
+        top: 4px;
+    }
+    .video.marker:before {
+        font-family: "FontAwesome";
+        content: "\f1c8"; // file-video
+    }
     a:hover .marker {
         display: none;
     }
