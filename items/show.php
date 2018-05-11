@@ -13,9 +13,6 @@
     <div id="item-top-media">
         <?php
         if ($embed = metadata('item', array('Item Type Metadata', 'Embed'))):
-            $embed = preg_replace('|(<iframe .*)(></iframe>)|',
-                                  '\1 allowfullscreen mozallowfullscreen webkitallowfullscreen\2',
-                                  $embed, 1);
             echo $embed;
         elseif ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')):
             echo files_for_item(
