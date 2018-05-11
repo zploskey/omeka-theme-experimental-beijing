@@ -157,9 +157,9 @@ $roles = array_keys($roleMap);
                     if (isset($elements[$elementName])) {
                         $elementText = $elements[$elementName][0];
                         if ($elementName === 'Chapter') {
-                            $bookRef[] = $elementText;
+                            $bookRef[] = __($elementText);
                         } else {
-                            $bookRef[] = __($elementName) . " $elementText";
+                            $bookRef[] = __("$elementName %d", $elementText);
                         }
                     }
                     $bookRefText = implode(', ', $bookRef);
