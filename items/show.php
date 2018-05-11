@@ -155,12 +155,16 @@ $roles = array_keys($roleMap);
                 $bookRefElements = array('Chapter', 'Plate', 'Figure', 'Page');
                 foreach ($bookRefElements as $elementName) {
                     if (isset($elements[$elementName])) {
-                        $elementText = $elements[$elementName][0];
-                        if ($elementName === 'Chapter') {
-                            $bookRef[] = __($elementText);
-                        } else {
-                            $bookRef[] = __("$elementName %d", $elementText);
+                        $newRefs = array();
+                        $elementTexts = $elements[$elementName];
+                        foreach ($elementTexts as $et) {
+                            if ($elementName === 'Chapter') {
+                                $newRefs[] = __($et);
+                            } else {
+                                $newRefs[] = __("$elementName %d", $et);
+                            }
                         }
+                        $bookRef[] = implode('; ', $newRefs);
                     }
                     $bookRefText = implode(', ', $bookRef);
                 }
