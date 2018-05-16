@@ -322,6 +322,7 @@ $moreInfoElements = array(
     <?php endif; ?>
 <?php endforeach; ?>
 
+    <?php if (get_theme_option('Show Citation')): ?>
         <div id="item-citation" class="element">
             <div class="element-cell element-cell-name">
                 <?php echo __('Citation') . ':'; ?>
@@ -332,6 +333,7 @@ $moreInfoElements = array(
                 </div>
             </div>
         </div>
+    <?php endif; ?>
     </div>
 </div>
 
