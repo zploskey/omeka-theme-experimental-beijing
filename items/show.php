@@ -210,30 +210,27 @@ $roles = array_keys($roleMap);
 </a>
 </div>
 <div id="series-section" class="items-list">
-<?php foreach ($this->series as $name => $series): ?>
-    <div class="series-name"><?php echo $name; ?></div>
-    <?php foreach ($series as $work): ?>
+<?php foreach (loop('series') as $series): ?>
     <div class="item hentry">
         <div class="item-meta">
-            <?php if (metadata($work, 'has files')): ?>
+            <?php if (metadata($series, 'has files')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $work),
-                                        array('class'=>'permalink'), 'show', $work); ?>
+                <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $series),
+                                        array('class'=>'permalink'), 'show', $series); ?>
             </div>
             <?php endif; ?>
 
             <h3><?php echo link_to_item(
-                metadata($work, array('Dublin Core', 'Title')),
-                array('class'=>'permalink'), 'show', $work); ?></h3>
+                metadata($series, array('Dublin Core', 'Title')),
+                array('class'=>'permalink'), 'show', $series); ?></h3>
 
-            <?php if ($date_created = metadata($work, array('Dublin Core', 'Date Created'))): ?>
+            <?php if ($date_created = metadata($series, array('Dublin Core', 'Date Created'))): ?>
             <div class="item-date-created">
                 <?php echo $date_created; ?>
             </div>
             <?php endif; ?>
         </div>
     </div>
-    <?php endforeach; ?>
 <?php endforeach; ?>
 </div>
 
