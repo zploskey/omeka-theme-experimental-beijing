@@ -114,13 +114,31 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 }
 
 #item-top {
+
+    > div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
     #item-top-media {
         @include span(6);
     }
+
     .placard {
         // keep synced with person about below
         padding-left: 50px;
         @include span(6 last);
+    }
+}
+
+#item-top.embed {
+    #item-top-media {
+        @include span(12 last);
+    }
+
+    .placard {
+        padding-left: 0px;
+        @include span(12 last);
     }
 }
 

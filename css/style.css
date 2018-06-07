@@ -1295,21 +1295,21 @@ th {
   width: 100%;
 }
 
-#item-top > div {
-  display: inline-block;
-  vertical-align: top;
-}
 #item-top #item-top-media,
-#item-top img,
-#item-top iframe {
+#item-top img {
   max-width: 100%;
   max-height: 600px;
+}
+#item-top iframe {
+  display: block;
+  margin: auto;
 }
 #item-top .lightbox-link img {
   cursor: zoom-in;
 }
 #item-top .placard {
   word-wrap: break-word;
+  margin: auto;
 }
 #item-top .placard h1 {
   font-size: 40px;
@@ -1910,6 +1910,10 @@ body.files .item-file {
     float: right;
   }
 
+  #item-top > div {
+    display: inline-block;
+    vertical-align: top;
+  }
   #item-top #item-top-media {
     width: 49.39759%;
     float: left;
@@ -1917,6 +1921,14 @@ body.files .item-file {
   #item-top .placard {
     padding-left: 50px;
     width: 49.39759%;
+  }
+
+  #item-top.embed #item-top-media {
+    width: 100%;
+  }
+  #item-top.embed .placard {
+    padding-left: 0px;
+    width: 100%;
   }
 
   #item-about.person {

@@ -9,12 +9,14 @@
         echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true));
     ?></h1>
 <?php endif; ?>
-<div id="item-top">
+
+<?php $embed = metadata('item', array('Item Type Metadata', 'Embed')); ?>
+
+<div id="item-top"<?php echo $embed ? ' class="embed"' : ''; ?>>
+
     <div id="item-top-media">
-        <?php
-        if ($embed = metadata('item', array('Item Type Metadata', 'Embed'))):
-            echo $embed;
-        elseif ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')):
+        <?php echo $embed; ?>
+        <?php if ((!$embed && get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')):
             echo files_for_item(
                 array(
                     'imageSize' => 'fullsize',
@@ -28,21 +30,20 @@
 
         <div id="lightbox">
             <a id="close-out-of-bounds" href="#_">
-            <?php echo files_for_item(
-                array('imageSize' => 'original')
-            ); ?>
-            <a id="close" href="#_">Close</a>
+                <?php echo files_for_item(
+                    array('imageSize' => 'original')
+                ); ?>
+                <a id="close" href="#_">Close</a>
             </a>
         </div>
         <?php endif; ?>
-
-        <!-- The following returns all of the files associated with an item. -->
         <?php if ((get_theme_option('Item FileGallery') == 1) && metadata('item', 'has files')): ?>
         <div id="itemfiles" class="element">
             <h3><?php echo __('Files'); ?></h3>
             <div class="element-text"><?php echo files_for_item(); ?></div>
         </div>
         <?php endif; ?>
+
     </div>
 
 <?php if (!$isPerson): ?>
@@ -56,6 +57,7 @@ foreach($creators as $creator):
 <?php endforeach; ?>
         <h3><?php echo metadata('item', array('Dublin Core', 'Date Created')); ?></h3>
     </div>
+
 </div>
 <?php endif; ?>
 
