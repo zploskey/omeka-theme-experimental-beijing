@@ -4,6 +4,18 @@
 
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
+<?php if (isset($exhibit)): ?>
+<nav>
+    <ul class="exhibit navigation">
+        <li id="back-to-exhibit" class="back">
+        <a href="<?php echo url(array('slug' => $exhibit->slug, 'page_slug_1' => 'image-gallery'), 'exhibitShow'); ?>">
+            <?php echo __('Image Gallery'); ?>
+        </a>
+        </li>
+    </ul>
+</nav>
+<?php endif; ?>
+
 <?php if ($isPerson): ?>
     <h1><?php
         echo metadata('item', array('Dublin Core', 'Title'), array('no_escape' => true));

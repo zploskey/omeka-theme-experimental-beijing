@@ -373,6 +373,11 @@ label[for="nav-trigger"] {
     content: " \f0d7";
 }
 
+.back a:before {
+    font-family: "FontAwesome";
+    content: "\f053"; // chevron-left
+}
+
 .secondary-nav,
 #secondary-nav {
     margin-bottom: 1em;
