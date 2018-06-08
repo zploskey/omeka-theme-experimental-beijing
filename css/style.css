@@ -790,7 +790,6 @@ header[role="banner"] a {
   margin-bottom: 10px;
 }
 #site-title a {
-  text-decoration: none;
   color: #333333;
 }
 
@@ -811,7 +810,6 @@ header[role="banner"] a {
 }
 #top-buttons a {
   color: #333333;
-  text-decoration: none;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -832,9 +830,6 @@ a:hover {
 a:active {
   color: #CC0000;
 }
-a:hover {
-  text-decoration: underline;
-}
 
 /* -------------------------------------------------------------------------*/
 /* General Navigation */
@@ -852,7 +847,6 @@ a:hover {
 }
 #top-nav a {
   color: #333333;
-  text-decoration: none;
 }
 #top-nav ul {
   padding-left: 117px;
@@ -911,10 +905,6 @@ label[for="nav-trigger"] {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-.navigation ul a,
-#sort-links ul a {
-  text-decoration: none;
 }
 
 .navigation #sort-links {
@@ -1466,9 +1456,6 @@ body.files .item-file {
   margin: 8px 20px;
   margin-left: 0;
 }
-.hTagcloud ul li a {
-  text-decoration: none;
-}
 .hTagcloud ul .popular,
 .hTagcloud ul .-popular {
   font-size: 120%;
@@ -1569,9 +1556,6 @@ body.files .item-file {
 }
 #exhibit-pages ul li a {
   color: #555;
-}
-#exhibit-pages ul li a:hover {
-  text-decoration: none;
 }
 #exhibit-pages ul li ul a:before {
   content: "\2014\0020";
@@ -1736,13 +1720,6 @@ body.files .item-file {
 #item-works,
 #item-more-info {
   border-top: 1px solid #555;
-}
-#item-about a,
-#item-keywords a,
-#item-series a,
-#item-works a,
-#item-more-info a {
-  text-decoration: none;
 }
 
 #item-about.person {

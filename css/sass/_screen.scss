@@ -249,7 +249,6 @@ header[role="banner"] {
     line-height: $base-line-height * 1.2;
     text-transform: uppercase;
     a {
-        text-decoration: none;
         color: $accent-dark;
     }
     margin-bottom: 10px;
@@ -271,7 +270,6 @@ header[role="banner"] {
     }
     a {
         color: $accent-dark;
-        text-decoration: none;
     }
 }
 
@@ -281,7 +279,6 @@ header[role="banner"] {
 a {
     @include link-colors($active-color, saturate($active-color,5%), $active-color, lighten($active-color, 10%), $active-color);
     text-decoration: none;
-    &:hover{text-decoration:underline;}
 }
 
 /* -------------------------------------------------------------------------*/
@@ -300,7 +297,6 @@ a {
     z-index: 2;
     a {
         color: $accent-dark;
-        text-decoration: none;
     }
     ul {
         padding-left: 117px;
@@ -353,9 +349,6 @@ label[for="nav-trigger"] {
         margin: 0;
         padding: 0;
         list-style-type: none;
-        a {
-            text-decoration: none;
-        }
     }
 }
 
@@ -854,9 +847,6 @@ body.files .item-file {
             display:inline-block;
             margin: (.25 * $base-line-height) 20px;
             margin-left: 0;
-            a {
-                text-decoration: none;
-            }
         }
         .popular,
         .-popular {
@@ -955,7 +945,6 @@ body.files .item-file {
             border-left: 0;
             white-space: normal;
             a {
-                &:hover{text-decoration:none;}
                 color: $grey-medium;
             }
             ul a {
@@ -1119,9 +1108,6 @@ body.files .item-file {
 #item-works,
 #item-more-info {
     border-top: 1px solid $grey-medium;
-    a {
-        text-decoration: none;
-    }
 }
 
 #item-about.person {
