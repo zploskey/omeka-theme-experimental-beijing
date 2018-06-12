@@ -34,7 +34,7 @@
     margin: 0;
 }
 
-.jcarousel img, a {
+.jcarousel img, .jcarousel a {
     max-width: 100%;
     line-height: 0;
     -moz-box-sizing: border-box;

@@ -559,6 +559,19 @@ footer {
   margin-right: 0;
 }
 
+.items #previous-item {
+  width: 49.39759%;
+  float: left;
+  margin-right: 1.20482%;
+}
+
+.items #next-item {
+  width: 49.39759%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
+}
+
 /* -------------------------------------------------------------------------*/
 /* General Styles */
 body {
@@ -896,6 +909,7 @@ label[for="nav-trigger"] {
 
 .navigation,
 #sort-links {
+  list-style-type: none;
   font-size: 25px;
   line-height: 40px;
   padding: 0;
@@ -904,7 +918,6 @@ label[for="nav-trigger"] {
 #sort-links ul {
   margin: 0;
   padding: 0;
-  list-style-type: none;
 }
 
 .navigation #sort-links {
@@ -931,6 +944,11 @@ label[for="nav-trigger"] {
 .back a:before {
   font-family: "FontAwesome";
   content: "\f053";
+}
+
+.forward a:after {
+  font-family: "FontAwesome";
+  content: "\f054";
 }
 
 .secondary-nav,

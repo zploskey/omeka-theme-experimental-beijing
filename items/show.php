@@ -5,15 +5,19 @@
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 <?php if (isset($exhibit)): ?>
+
 <nav>
-    <ul class="exhibit navigation">
-        <li id="back-to-exhibit" class="back">
+    <ul class="navigation">
+        <li id="back-to" class="back">
         <a href="<?php echo url(array('slug' => $exhibit->slug, 'page_slug_1' => 'image-gallery'), 'exhibitShow'); ?>">
             <?php echo __('Image Gallery'); ?>
         </a>
         </li>
+        <li id="previous-item" class="back"><?php echo ebj_link_to_previous_item_show(); ?></li>
+        <li id="next-item" class="forward"><?php echo ebj_link_to_next_item_show(); ?></li>
     </ul>
 </nav>
+
 <?php endif; ?>
 
 <?php if ($isPerson): ?>
