@@ -35,6 +35,8 @@
 
 .nav-menu {@include span(12); margin-right:0;}
 header[role="banner"] {@include span(12);}
+#site-title {@include span(12)};
+#top-buttons {@include span(12)};
 .content {@include span(12);}
 .pagination-nav {@include span(12);}
 .sort-and-nav {@include span(12);}
@@ -237,7 +239,6 @@ h3 {
 
 header[role="banner"] {
     min-height: 108px;
-    margin-bottom: 10px;
     a {
         color: $accent-dark;
     }
@@ -253,8 +254,10 @@ header[role="banner"] {
     text-transform: uppercase;
     a {
         color: $accent-dark;
+        img {
+            max-width: 100%;
+        }
     }
-    margin-bottom: 10px;
 }
 
 #site-subtitle {
@@ -266,8 +269,10 @@ header[role="banner"] {
 }
 
 #top-buttons {
-    float: right;
     font-size: 25px;
+    line-height: 45px;
+    text-align: right;
+    white-space: nowrap;
     > * {
         display: inline-block;
     }
@@ -325,7 +330,7 @@ a {
 
 label[for="nav-trigger"] {
     display: inline-block;
-    margin-left: 31px;
+    margin-left: 20px;
     @include noselect;
 }
 
@@ -340,7 +345,7 @@ label[for="nav-trigger"] {
 
 .lang-select {
     color: $accent-dark;
-    margin-left: 31px;
+    margin-left: 20px;
 }
 
 .navigation,

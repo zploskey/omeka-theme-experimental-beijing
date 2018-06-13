@@ -42,17 +42,15 @@
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
             <?php echo theme_header_image(); ?>
             <div id="site-title">
-                <?php
-                if ($logo = theme_logo()) {
-                    echo link_to_home_page($logo);
-                } else {
-                    echo link_to_home_page(__(option('site_title')));
-                }
-                ?>
-                <br>
-                <div id="site-subtitle">
-                    <?php echo __(get_theme_option('site_subtitle')); ?>
-                </div>
+                <?php if ($logo = theme_logo()): ?>
+                    <?php echo link_to_home_page($logo); ?>
+                <?php else: ?>
+                    <?php echo link_to_home_page(__(option('site_title'))); ?>
+                    <br>
+                    <div id="site-subtitle">
+                        <?php echo __(get_theme_option('site_subtitle')); ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div id="top-buttons">
@@ -66,12 +64,10 @@
                 </div>
 
                 <div class="lang-select">
-                    <a href="<?php echo current_url(array('lang' => str_replace('-', '_', __('zh-CN')))); ?>">
-                    <?php echo __('中文'); ?>
-                    </a>
+                    <a href="<?php echo current_url(array('lang' => str_replace('-', '_', __('zh-CN')))); ?>"><?php echo __('中文'); ?></a>
                 </div>
 
-                <label for="nav-trigger"><span id="menu-label" aria-label="Menu"><?php echo __('Menu');?></span> &#9776;</label>
+                <label for="nav-trigger"><span id="menu-label" aria-label="Menu"><?php echo __('Menu');?></span>&nbsp;&#9776;</label>
             </div>
         </header>
 

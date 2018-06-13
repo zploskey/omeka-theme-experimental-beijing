@@ -16,22 +16,10 @@
     padding: 0 $content-margin;
 }
 
-header[role="banner"] {
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-
-#site-title {
-    @include span(5);
-    margin-bottom: 0;
-}
-
+#site-title {@include span(6);}
 #top-buttons {
-    @include span(7 last);
-    min-width: 340px; // measured by what fits now
-    display: flex;
-    justify-content: flex-end;
+    @include span(6 last);
+    line-height: 108px;
 }
 
 #featured {@include span(last 5);}

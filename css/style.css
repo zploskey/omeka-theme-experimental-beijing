@@ -496,6 +496,20 @@ header[role="banner"] {
   margin-right: 0;
 }
 
+#site-title {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#top-buttons {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .content {
   width: 100%;
   float: left;
@@ -786,7 +800,6 @@ h3 {
 
 header[role="banner"] {
   min-height: 108px;
-  margin-bottom: 10px;
   z-index: 10;
 }
 header[role="banner"] a {
@@ -800,10 +813,12 @@ header[role="banner"] a {
   font-weight: bold;
   line-height: 38.4px;
   text-transform: uppercase;
-  margin-bottom: 10px;
 }
 #site-title a {
   color: #333333;
+}
+#site-title a img {
+  max-width: 100%;
 }
 
 #site-subtitle {
@@ -815,8 +830,10 @@ header[role="banner"] a {
 }
 
 #top-buttons {
-  float: right;
   font-size: 25px;
+  line-height: 45px;
+  text-align: right;
+  white-space: nowrap;
 }
 #top-buttons > * {
   display: inline-block;
@@ -884,7 +901,7 @@ a:active {
 
 label[for="nav-trigger"] {
   display: inline-block;
-  margin-left: 31px;
+  margin-left: 20px;
   cursor: default;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -904,7 +921,7 @@ label[for="nav-trigger"] {
 
 .lang-select {
   color: #333333;
-  margin-left: 31px;
+  margin-left: 20px;
 }
 
 .navigation,
@@ -1773,7 +1790,7 @@ body.files .item-file {
 
 /* -------------------------------------------------------------------------*/
 /* Screen - Mobile */
-@media screen and (min-width: 755px) {
+@media screen and (min-width: 950px) {
   *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1794,23 +1811,14 @@ body.files .item-file {
     padding: 0 9.6528%;
   }
 
-  header[role="banner"] {
-    display: flex;
-    align-items: center;
-    margin: 0;
-  }
-
   #site-title {
-    width: 40.96386%;
+    width: 49.39759%;
     float: left;
-    margin-bottom: 0;
   }
 
   #top-buttons {
-    width: 57.83133%;
-    min-width: 340px;
-    display: flex;
-    justify-content: flex-end;
+    width: 49.39759%;
+    line-height: 108px;
   }
 
   #featured {

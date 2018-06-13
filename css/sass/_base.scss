@@ -55,24 +55,3 @@ $font-family-main: "Helvetica Neue", "Helvetica", Arial, sans-serif;
 $base-font-size: 20px;
 $base-line-height: 32px;
 $font-family-title: "Helvetica Neue", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-
-// ---------------------------------------------------------------------------
-// Mixins
-
-@mixin link-button {
-  padding: 5px;
-  display: block;
-  background-color: $accent-light;
-  margin-bottom: 10px;
-
-  &:hover {
-    color: $accent-light;
-    text-decoration: none;
-  }
-}
-
-@mixin line-button {
-  &:before {
-    content: "\2014\0020";
-  }
-}
