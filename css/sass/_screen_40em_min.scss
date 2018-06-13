@@ -37,7 +37,15 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 .browse .items-list {@include span(9);}
 
 .exhibits #exhibit-pages {
-    @include span(4);
+    @include span(3);
+}
+
+.exhibits.summary #primary,
+.exhibits.show #exhibit-titleblock,
+.exhibits.summary #exhibit-titleblock,
+#exhibit-blocks {
+    @include span(9 last);
+    float: right;
 }
 
 .chapters {
@@ -80,19 +88,10 @@ div#contribution-type-form div.inputs {@include span(last 3);}
     }
 }
 
-.exhibits.summary #primary,
-.exhibits.show #exhibit-titleblock,
-.exhibits.summary #exhibit-titleblock,
-#exhibit-blocks {
-    @include span(8 last);
-    float: right;
-}
-
 .item.hentry {
     width: 329px;
     padding: 8px;
 }
-
 
 /* -------------------------------------------------------------------------*/
 /* General */
@@ -177,32 +176,11 @@ div#contribution-type-form div.inputs {@include span(last 3);}
 }*/
 
 .exhibits #exhibit-pages {
-    display: block;
     height: 100%;
-    padding: 0;
-    margin: 0;
-    ul {
-        display: block;
-        li {
-            display: block;
-            padding: 10px;
-            padding-left: 30px;
-            text-align: left;
-            border: none;
-            a {
-                background: transparent;
-            }
-        }
-        li:first-of-type {
-            padding-left: 0;
-        }
-    }
-    li.current {
-        background: transparent;
-        a {
-            color: $active-color;
-        }
-    }
+}
+
+.exhibit-block {
+    margin-top: 1em;
 }
 
 .exhibits.show {
