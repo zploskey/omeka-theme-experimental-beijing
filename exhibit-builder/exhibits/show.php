@@ -4,6 +4,11 @@ echo head(array(
     'bodyclass' => 'exhibits show'));
 ?>
 
+<div id="exhibit-titleblock">
+    <h3><?php echo __(get_theme_option('exhibits_bookpart')); ?></h3>
+    <h1><?php echo metadata('exhibit', 'title'); ?></h1>
+</div>
+
 <nav id="exhibit-pages">
     <?php
     $link = exhibit_builder_link_to_exhibit($exhibit);
