@@ -112,9 +112,14 @@ div#contribution-type-form div.inputs {@include span(last 3);}
     }
 
     .placard {
-        // keep synced with person about below
         padding-left: 50px;
         @include span(6 last);
+        h1 {
+            margin-bottom: 50px;
+        }
+        h3:first-of-type {
+            margin-bottom: 30px;
+        }
     }
 }
 

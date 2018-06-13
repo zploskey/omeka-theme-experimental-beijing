@@ -1915,6 +1915,12 @@ body.files .item-file {
     padding-left: 50px;
     width: 49.39759%;
   }
+  #item-top .placard h1 {
+    margin-bottom: 50px;
+  }
+  #item-top .placard h3:first-of-type {
+    margin-bottom: 30px;
+  }
 
   #item-top.embed #item-top-media {
     width: 100%;
