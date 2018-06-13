@@ -1,5 +1,6 @@
+<?php $lang = get_html_lang(); ?>
 <!DOCTYPE html>
-<html lang="<?php echo get_html_lang(); ?>">
+<html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +43,9 @@
             <?php fire_plugin_hook('public_header', array('view' => $this)); ?>
             <?php echo theme_header_image(); ?>
             <div id="site-title">
-                <?php if ($logo = theme_logo()): ?>
+                <?php if ($lang === 'zh-CN' && $logo = ebj_theme_logo_cn()): ?>
+                    <?php echo link_to_home_page($logo); ?>
+                <?php elseif ($logo = theme_logo()): ?>
                     <?php echo link_to_home_page($logo); ?>
                 <?php else: ?>
                     <?php echo link_to_home_page(__(option('site_title'))); ?>

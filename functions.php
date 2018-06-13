@@ -53,3 +53,19 @@ function ebj_link_to_previous_item_show($text = null, $props = array())
         }
     }
 }
+
+/**
+ * Get the Chinese language logo image tag (theme option 'logo_cn').
+ *
+ * @uses get_theme_option()
+ * @return string|null
+ */
+function ebj_theme_logo_cn()
+{
+    $logo = get_theme_option('logo_cn');
+    if ($logo) {
+        $storage = Zend_Registry::get('storage');
+        $uri = $storage->getUri($storage->getPathByType($logo, 'theme_uploads'));
+        return '<img src="' . $uri . '" alt="' . __(option('site_title')) . '" />';
+    }
+}
