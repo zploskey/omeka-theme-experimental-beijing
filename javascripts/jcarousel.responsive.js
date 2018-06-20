@@ -3,9 +3,9 @@
         var jcarousel = $('.jcarousel');
 
         jcarousel
-            .on('jcarousel:reload jcarousel:create', function () {
-                var width = jcarousel.innerWidth();
-                jcarousel.jcarousel('items').css('width', width + 'px');
+            // Set carousel height to the target image's li height.
+            .on('jcarousel:targetin jcarousel:reload', 'li', function() {
+              jcarousel.height($(this).height());
             })
             .jcarousel({
                 wrap: 'circular'
@@ -37,5 +37,13 @@
                     return '<a href="#' + page + '">' + page + '</a>';
                 }
             });
+
+        function resizeCarousel() {
+            jcarousel.height($('.jcarousel li:first').height());
+        }
+
+        $(window).load(resizeCarousel);
+        $(window).resize(resizeCarousel);
+
     });
 })(jQuery);

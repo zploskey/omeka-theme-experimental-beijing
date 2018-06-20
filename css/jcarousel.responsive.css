@@ -12,7 +12,6 @@
 }
 
 .jcarousel ul {
-    display: block;
     width: 20000em;
     position: relative;
     list-style: none;
@@ -21,11 +20,10 @@
 }
 
 .jcarousel li {
-    display: inline-block;
-    vertical-align: middle;
     text-align: center;
     line-height: 0;
-    width: 200px;
+    width: 100vw;
+    float: left;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -35,7 +33,8 @@
 }
 
 .jcarousel img, .jcarousel a {
-    max-width: 100%;
+    max-width: 100vw;
+    max-height: 90vh;
     line-height: 0;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
